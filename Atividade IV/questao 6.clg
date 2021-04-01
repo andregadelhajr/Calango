@@ -1,0 +1,50 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	real sf,sm,mf,mm,n;
+	inteiro if,im;
+	caracter s;
+
+	// Instruções
+
+	sm = 0;
+	sf = 0;
+	im = 0;
+	if = 0;
+	n = 0;
+	
+	enquanto(n >= 0)faca
+	    escreva("Escreva o numero da nota aluno: ");
+	    leia(n);
+	    escreva("Escreva o sexo do aluno 'm' para masculino e 'f' para feminino: ");
+	    leiaCaracter(s);
+
+	    se((n>=0)e(s == 'm' ou s == 'M'))entao
+	        sm = sm + n;
+	        im = im + 1;
+	    senao
+	        se((n>=0)e(s == 'f' ou s == 'F'))entao
+	            sf = sf + n;
+	            if = if + 1;
+	        fimSe
+	    fimSe
+    fimEnquanto
+
+    se(im>0)entao
+	escreval("Media da notas dos alunos: ",sm/im);
+	senao
+	escreval("Não há notas de alunos.");
+    fimSe
+    se(if>0)entao
+	escreval("Media da notas das alunas: ",sf/if);
+	senao
+	escreval("Não há notas de alunas.");
+    fimSe
+fimPrincipal

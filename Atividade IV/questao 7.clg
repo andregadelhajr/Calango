@@ -1,0 +1,63 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+    inteiro d,i1,i2,i3,qtde;
+    caracter c;
+
+	// Instruções
+	i1 = 0;
+	i2 = 0;
+	i3 = 0;
+
+    faca
+	escreval("Insira qual fruta deseja escolher: ");
+	escreval("1. Abacaxi");
+	escreval("2. Maçã");
+	escreval("3. Pera");
+	escreva("Fruta desejada: ");
+	leia(d);
+	escreva("Digite quantidade da fruta: ");
+	leia(qtde);
+	
+    escolha(d)
+    caso 1
+        i1 = i1 + qtde;
+        interrompa;
+    caso 2
+        i2 = i2 + qtde;
+        interrompa;
+    caso 3
+        i3 = i3 + qtde;
+        interrompa;
+    outroCaso             
+    escreval("Não a essa opção");
+    fimEscolha 
+    escreva("Insira 's' para continuar e 'n' para encerrar: ");
+	leiaCaracter(c);       
+    enquanto(c == 's'); 
+
+    se(i1 >= 1)entao
+    escreval("O numero de abacaxis é: ",i1);
+    senao
+    escreval("sem abacaxis: ");
+    fimSe
+    se(i2 >= 1)entao
+    escreval("O numero de maçãs é ",i2);
+    senao
+    escreval("sem maçã: ");
+    fimSe
+    se(i3 >= 1)entao
+    escreval("O numero de pera é ",i3);
+    senao
+    escreval("sem pera: ");
+    fimSe                                
+	
+fimPrincipal
+

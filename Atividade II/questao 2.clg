@@ -1,0 +1,26 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	inteiro n,r;
+
+	// Instruções
+
+	escreva("Insira o numero qualquer a sua escolha: ");
+	leia(n);
+
+	se(n>=0)entao
+	    r=n;
+	    escreval("O modulo do numero inserido é: ",r);
+	senao
+	    r=n*(-1);
+	    escreval("O modulo do numero inserido é: ",r);
+	fimSe        
+
+fimPrincipal

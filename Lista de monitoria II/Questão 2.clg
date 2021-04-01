@@ -1,0 +1,141 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo: Controlar as informações de um campeonato de futebol de salão. 
+//  Entrada : Idade e peso de cada jogador.
+//  Saída   : Média das idades por time, média dos pesos dos jogadores 
+//			  acima de 25 anos, quantidade de jogadores menores de 18 
+//			  anos, quantidade de jogadores com mais de 80 quilos e 
+//			  porcentagem desses jogadores.
+
+
+principal
+	// Declarações
+	
+	inteiro idade, times, jogadores, somaIdades, contIdades, contPesos;
+	inteiro contIdadesMenores, contJogadores, contMais80;
+	real peso, somaPesos;
+	caracter continuar, continuar2;
+	
+	// Instruções
+	
+	times = 0;
+	contIdadesMenores = 0;
+	contMais80 = 0;
+	contJogadores = 0;
+	continuar = 'S';
+	
+	faca
+	 
+		jogadores = 0;
+		times=times+1;
+		somaIdades=0;
+		contIdades=0;
+		somaPesos = 0;
+		contPesos = 0;
+        continuar2 = 'S';
+		
+		escreval("Dados do ",times,"º time:");
+		
+		faca
+		 
+			jogadores = jogadores+1;
+			
+			escreval("Dados do ",jogadores,"º jogador:");
+			
+			idade = leValidaIdade();
+			peso = leValidaPeso();
+			
+			somaIdades=somaIdades+idade;
+			contIdades=contIdades+1;
+			
+			se(idade>25)entao
+				somaPesos = somaPesos+peso;
+				contPesos = contPesos+1;
+			senao
+				se(idade<18)entao
+					contIdadesMenores = contIdadesMenores+1;
+				fimSe
+			fimSe
+			
+			contJogadores = contJogadores+1;
+			
+			se(peso>80)entao
+				contMais80 = contMais80+1;
+			fimSe
+			
+			se(jogadores>=6)entao
+				escreval("Deseja armazenar novo jogador? S - sim ou N - não.");
+				leiaCaracter(continuar2);
+				continuar2 = maiusculoCaracter(continuar2);
+			fimSe
+			
+		enquanto(jogadores<11 e continuar2 == 'S');
+		
+		apresentaDadosTime(somaIdades, contIdades, somaPesos, contPesos);
+		
+		se(times>=3)entao
+			escreval("Deseja armazenar novo time? S - sim ou N - não.");
+			leiaCaracter(continuar);
+			continuar = maiusculoCaracter(continuar);
+		fimSe
+		
+	enquanto(times<9 e continuar=='S');
+	
+	apresentaDadosJogadores(contIdadesMenores, contJogadores, contMais80);
+	
+fimPrincipal
+
+
+funcao inteiro leValidaIdade()
+
+	inteiro idade;
+	
+	faca
+		escreval("Digite a idade do jogador:");
+		leia(idade);
+		
+		se(idade<=0)entao
+			escreval("Idade inválida.");
+		fimSe
+	enquanto(idade<=0);
+	
+	retorna idade;
+fimFuncao
+
+funcao real leValidaPeso()
+
+	real peso;
+	
+	faca
+		escreval("Digite o peso do jogador:");
+		leia(peso);
+		
+		se(peso<=0)entao
+			escreval("Peso inválido.");
+		fimSe
+	enquanto(peso<=0);
+	
+	retorna peso;
+fimFuncao
+
+procedimento apresentaDadosTime(inteiro somaIdades, inteiro contIdades, real somaPesos, inteiro contPesos)
+ 
+	escreval("A média das idades dos jogadores do time é ", somaIdades/contIdades);
+	
+	se(contPesos>0)entao
+		escreval("A média dos pesos dos jogadores acima de 25 anos é ", somaPesos/contPesos);
+	senao
+		escreval("Não é possivel calcular a média dos pesos");
+	fimSe
+	
+fimProcedimento
+
+procedimento apresentaDadosJogadores(inteiro contIdadesMenores, inteiro contJogadores, inteiro contMais80)
+
+	escreval("A quantidade de jogadores menores de idade é ", contIdadesMenores);
+	escreval("A quantidade de jogadores com mais de 80 quilos é ", contMais80);
+	escreval("A porcentagem de jogadores com mais de 80 quilos é ", (contMais80*100)/contJogadores);
+	
+fimProcedimento
+
+

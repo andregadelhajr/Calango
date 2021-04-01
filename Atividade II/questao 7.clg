@@ -1,0 +1,32 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	inteiro n1, n2,r;
+
+	// Instruções
+
+	escreva("Entre com o primeior numero da operação: ");
+	leia(n1);
+	escreva("Entre com o segundo numero da operação: ");
+	leia(n2);
+
+	se(n1==n2)entao
+	    escreval("Numeros iguais, resultado nulo ");
+	senao
+        se(n1>n2)entao
+            r=n1-n2;
+            escreval("A diferença entre os numeros é: ",r);
+        senao
+            r=n2-n1;
+            escreval("A diferença entre os numeros é: ",r);
+        fimSe    
+	fimSe    
+
+fimPrincipal

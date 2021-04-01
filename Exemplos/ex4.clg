@@ -1,0 +1,37 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	real n,s,m;
+	inteiro i;
+	caracter c;
+
+	// Instruções
+
+	s = 0;
+	i = 0;
+	c = 's';
+	
+	enquanto(c == 's')faca
+	    escreva("Escreva o numero da nota: ");
+	    leia(n);
+
+	    s = s + n;
+	    i = i + 1;
+
+	    escreva("Escreva 's' para sim e 'n' para não continuar: ");
+	    leiaCaracter(c);
+  
+	fimEnquanto
+
+	m = s/i;
+
+	escreval("Media da notas dos alunos: ",m);
+
+fimPrincipal

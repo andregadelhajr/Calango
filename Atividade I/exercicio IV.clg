@@ -1,0 +1,25 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo: com dois numeros fornecer o resto e o quociente do primeiro pelo segundo 
+//  Entrada : ler dois numeros
+//  Saída   : resto e quociente
+
+
+principal
+	// Declarações
+
+	inteiro a,b,r,q;
+
+	// Instruções
+
+	escreva("Escreva o valor do dividendo da operação: ");
+	leia(a);
+	escreva("Escreva o valor do divisor da operação: ");
+	leia(b);
+
+	r=a mod b;
+	q=a\b;
+
+	escreval("O quociente e o resto da divisao respectivamente de ",a,"/",b," é: ",q,",",r);
+
+fimPrincipal

@@ -1,0 +1,25 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+	texto p;
+	inteiro v;
+
+	// Instruções
+	escreva("escreva placa do veiculo: ");
+	leia(p);
+	escreva("escreva velocidade do carro: ");
+	leia(v);
+
+	se(v>80)entao
+	    escreval("limite de velocidade, sera multado");
+	senao
+	    escreval("nao sera multado");
+	fimSe        
+
+fimPrincipal

@@ -1,0 +1,58 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  Realizar uma pesquisa sobre as características físicas da população
+//  Entrada : Sexo, cor do olhos, cor dos cabelos, idade
+//  Saída   : A maior idade dos habitantes, porcentagem de indivíduos do sexo feminino com idade entre 18 e 35 anos com olhos verdes e cabelos loiros
+
+
+principal
+	// Declarações
+	
+	caracter sexo;
+	inteiro corOlhos, corCabelos, idade;
+	inteiro i, maiorIdade, T;
+	
+	// Instruções
+	i = 0;
+	maiorIdade = 0;
+	T = 0;
+	
+	faca
+		faca
+		    limpaTela();
+			escreval("Informe o sexo da pessoa: m - masculino ou f - feminino");
+			leiaCaracter(sexo);
+			sexo=maiusculoCaracter(sexo);
+		enquanto(sexo!='M' e sexo!='F');
+		faca
+			escreval("Informe a cor dos olhos: 1 - Azuis, 2 - Verdes, 3 - Castanhos e 4 - Pretos");
+			leia(corOlhos);
+		enquanto(corOlhos<1 ou corOlhos>4);
+		faca
+			escreval("Informe a cor dos cabelos: 1 - Loiros, 2 - Castanhos e 3 - Pretos");
+			leia(corCabelos);
+		enquanto(corCabelos<1 ou corCabelos>3);
+		escreval("Digite a idade em anos ou -1 para sair:");
+		leia(idade);
+		se(idade>=0)entao
+			se(maiorIdade<idade)entao
+				maiorIdade=idade;
+			fimSe
+			se(sexo=='F' e idade>=18 e idade<=35 e corOlhos==2 e corCabelos==1)entao
+				T = T + 1;
+			fimSe
+			i = i + 1;
+		fimSe
+	enquanto(idade!=-1);
+	
+	se(i>0)entao
+	    limpaTela();
+		escreval("A maior idade dos habitantes é ", maiorIdade," anos.");
+		escreval("O percentual de indivíduos do sexo feminino com idade entre 18 e 35 anos, com olhos verdes e cabelos loiros é de: ", ((T * 100)/i), "%");
+	senao
+	    limpaTela();
+		escreval("Não obtivemos dados para a pesquisa. Tente novamente");
+	fimSe
+			
+
+fimPrincipal

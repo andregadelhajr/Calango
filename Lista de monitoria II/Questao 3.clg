@@ -1,0 +1,167 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo: Verificar a quantidade de focos do mosquito da dengue em 
+//			  várias localidades.
+//  Entrada : Número de localidades, nome da localidade, quantidade de 
+//			  construções visitadas, quantidade de focos do mosquito, 
+//			  o tipo de construção.
+//  Saída   : Quantidade de construções utilizadas como residência, 
+//			  quantidade de construções utilizadas como comércio, 
+//			  quantidade média dos focos encontrados, maior quantidade 
+//			  de focos e a localidade onde ocorreu essa maior quantidade.
+
+
+principal
+	// Declarações
+	
+	inteiro numeroLocalidades, i, qtdeConstrucoes, i2;
+	inteiro qtdeFocos, contResidencia, contComercio, somaFocos, maiorQtdeFocos, somaFocosLocal;
+	texto nomeLocalidade, nomeMaiorFoco;
+	caracter tipo;
+
+	// Instruções
+	
+	somaFocos=0;
+	
+	numeroLocalidades = leValidaQuantidade();
+	
+	para(i de 1 ate numeroLocalidades passo 1)faca
+	 
+		contResidencia=0;
+		contComercio=0;
+		somaFocosLocal=0;
+		
+		nomeLocalidade = leValidaLocalidade();
+		qtdeConstrucoes = leValidaConstrucoes();
+		
+		para(i2 de 1 ate qtdeConstrucoes passo 1)faca
+		 
+			qtdeFocos = leValidaFocos();
+			tipo = leValidaTipoConstrucao();
+			
+			se(tipo=='R')entao
+				contResidencia = contResidencia+1;
+			senao
+				contComercio = contComercio+1;
+			fimSe
+			
+			somaFocos = somaFocos + qtdeFocos;
+			somaFocosLocal = somaFocosLocal + qtdeFocos;
+		fimPara
+		
+		se(i==1)entao
+			maiorQtdeFocos = somaFocosLocal;
+			nomeMaiorFoco = nomeLocalidade;
+		senao
+			se(somaFocosLocal>=maiorQtdeFocos)entao
+				maiorQtdeFocos = somaFocosLocal;
+				nomeMaiorFoco = nomeLocalidade;
+			fimSe
+		fimSe
+		
+		escreval("Na localidade ", nomeLocalidade);
+		escreval("Quantidade de construção residencial: ", contResidencia);
+		escreval("Quantidade de construção comercial: ", contComercio);
+		
+	fimPara
+	
+	leiaCaracter(tipo);
+	
+	limpaTela();
+	escreval("A quantidade média dos focos encontrados é de ", somaFocos/(numeroLocalidades*qtdeConstrucoes));
+	escreval("A maior quantidade de focos foi de ", maiorQtdeFocos);
+	escreval("Na localidade ", nomeMaiorFoco);
+	
+fimPrincipal
+
+
+funcao inteiro leValidaQuantidade()
+
+	inteiro qtde;
+	
+	faca
+		escreval("Digite o número de localidades levantadas:");
+		leia(qtde);
+		
+		se(qtde<3)entao
+			escreval("Número inválido.");
+		fimSe
+	enquanto(qtde<3);
+	
+	retorna qtde;
+fimFuncao
+funcao texto leValidaLocalidade()
+
+	texto localidade;
+	
+	faca
+		escreval("Digite o nome da localidade:");
+		leia(localidade);
+		
+		se(comparaTexto(localidade,"")==0)entao
+			escreval("Nome da localidade é obrigatório.");
+		fimSe
+	enquanto(comparaTexto(localidade,"")==0);
+	
+	retorna localidade;
+fimFuncao
+
+funcao inteiro leValidaConstrucoes()
+
+	inteiro qtde;
+	
+	faca
+		escreval("Digite a quantidade de construções:");
+		leia(qtde);
+		
+		se(qtde<1)entao
+			escreval("Quantidade inválida.");
+		fimSe
+	enquanto(qtde<1);
+	
+	retorna qtde;
+fimFuncao
+
+funcao inteiro leValidaFocos()
+
+	inteiro qtde;
+	
+	faca
+		escreval("Digite a quantidade de focos do mosquito:");
+		leia(qtde);
+		
+		se(qtde<0 ou qtde>100)entao
+			escreval("Quantidade inválida.");
+		fimSe
+	enquanto(qtde<0 ou qtde>100);
+	
+	retorna qtde;
+fimFuncao
+
+funcao caracter leValidaTipoConstrucao()
+
+	caracter tipo;
+	
+	faca
+		escreval("Digite o tipo de construção:");
+		escreval("R - residência");
+		escreval("C - comércio");
+		escreva("Opção: ");
+		leiaCaracter(tipo);
+		tipo = maiusculoCaracter(tipo);
+		
+		se(tipo!='R' e tipo!='C')entao
+			escreval("Tipo de construção inválida.");
+		fimSe
+	enquanto(tipo!='R' e tipo!='C');
+	
+	retorna tipo;
+fimFuncao
+
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	real Vp,V1,V2,V3,V4;
+
+	// Instruções
+
+	escreva("Qual e o valor do produto: ");
+	leia(Vp);
+    
+    V1 = Vp * 0.9;
+    V2 = Vp * 0.95;
+    V3 = Vp / 2;
+    V4 = (Vp*1.10) / 3;
+
+    escreval("O valor normal do produto a ser pago é: ",Vp);
+    
+    escreval("Opções de forma de pagamento: ");
+
+	escreval("1. À vista em dinheiro ou cheque, recebe 10% de desconto: ",V1);
+    escreval("2. À vista no cartão de crédito, recebe 5% de desconto: ",V2);
+    escreval("3. Em duas vezes, preço normal de etiqueta sem juros: ",V3);
+    escreval("4. Em três vezes, preço normal de etiqueta mais juros de 10%: ",V4::3);   
+
+fimPrincipal

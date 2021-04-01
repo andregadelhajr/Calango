@@ -1,0 +1,49 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+	
+	real km, litros, consumo;
+
+	// Instruções
+	
+	escreva("Digite a quilometragem percorrida: ");
+	leia(km);
+	escreva("Digite a quantidade de litros consumidos no percurso: ");
+	leia(litros);	
+	
+	consumo = calculo(km, litros);
+
+	escreval("");
+	escreval("O consumo do veículo é de ", consumo," km/l.");
+	Classificacao(consumo);
+	escreval("");
+	
+fimPrincipal
+
+funcao real calculo(real quilometros, real qtdeLitros)
+
+	real total;
+	total = quilometros/qtdeLitros;
+	retorna total;
+fimFuncao
+
+procedimento Classificacao(real cons)
+
+	se(cons<=10)entao
+		escreval("O veiculo não é econômico.");
+	senao
+		se(cons>10 e cons<=13)entao
+			escreval("O veiculo é econômico.");
+		senao
+			escreval("O veiculo é muito econômico.");
+		fimSe
+	fimSe
+	
+fimProcedimento
+

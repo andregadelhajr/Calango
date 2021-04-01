@@ -1,0 +1,49 @@
+algoritmo funcao1;
+// Síntese
+// Objetivo: calcular a média aritmética
+// para cada estudante
+// Entrada: duas notas por estudante
+// Saída: média de cada estudante
+
+principal
+
+//Declaraçoes
+
+    real nota1, nota2, resultado;
+    inteiro qtde, contador;
+
+// Instruções
+
+    escreva("Informe quantidade de estudantes:");
+    leia(qtde);
+    limpaTela( );
+    
+    para(contador de 1 ate qtde passo 1) faca
+    
+        escreval("Estudante = ", contador);
+        escreva("Nota 1 = ");
+        leia(nota1);
+        escreva("Nota 2 = ");
+        leia(nota2);
+       
+     // acionamento do sub-algoritmo
+     
+        resultado = calculaMedia(nota1,nota2);
+        escreval("Media = ", resultado:5:2);
+        escreval("");
+     
+    fimPara
+    
+fimPrincipal
+
+//Objetivo : obter a média entre 2 nros
+// Parâmetros : dois números
+// Retorno : média dos números
+
+    funcao real calculaMedia(real
+        primeira ,real segunda )
+        real media;
+        media =(primeira + segunda) / 2;
+        retorna media;
+    fimFuncao
+    

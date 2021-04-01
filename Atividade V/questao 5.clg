@@ -1,0 +1,137 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada : 
+//  Saída   : 
+
+
+principal
+	// Declarações
+
+	real numero1, numero2, numero3;
+    caracter operador1,operador2;
+    inteiro i;
+
+	// Instruções
+
+  para(i de 1 ate 2 passo 1)faca
+    escreval("Escreva informações para calcular uma ",i,"º operação matematica: ");
+	escreval("");
+	escreva("Escreva o primeira numero da ",i,"º operação: ");
+    leia(numero1);
+    escreva("Escreva o primeira operador (+,-,*,/) da ",i,"º operação: ");
+    leiaCaracter(operador1);
+    escreva("Escreva o segunda numero da ",i,"º operação: ");
+    leia(numero2);
+    escreva("Escreva o segundo operador (+,-,*,/) da ",i,"º operação: ");
+    leiaCaracter(operador2);
+    escreva("Escreva o terceiro numero da ",i,"º operação: ");
+    leia(numero3);
+
+    escreval("");
+    escreval("================================================================================");
+    escreval("sendo assim o valor da ",i,"º operação de ",numero1,operador1,numero2,operador2,numero3,": ", operacao(numero1,numero2,numero3,operador1,operador2));
+	escreval("================================================================================");
+	escreval("");
+  fimPara	
+
+fimPrincipal
+
+funcao real operacao(real no1, real no2, real no3, caracter op1, caracter op2) 
+
+    real calculo;
+
+    se(op1=='+' e op2=='+')entao
+        calculo = no1 +no2 +no3;
+        valida(calculo);
+    senao
+        se(op1=='+' e op2=='-')entao
+            calculo = no1 +no2 -no3;
+            valida(calculo);
+        senao
+            se(op1=='+' e op2=='*')entao
+                calculo = no1 +no2 *no3;
+                valida(calculo);
+            senao
+                se(op1=='+' e op2=='/')entao
+                    calculo = no1 +no2 /no3;
+                    valida(calculo);
+                senao
+                    se(op1=='-' e op2=='+')entao
+                        calculo = no1 -no2 +no3;
+                        valida(calculo);
+                    senao
+                        se(op1=='-' e op2=='-')entao
+                            calculo = no1 -no2 -no3;
+                            valida(calculo);
+                        senao
+                            se(op1=='-' e op2=='*')entao
+                                calculo = no1 -no2 *no3;
+                                valida(calculo);
+    senao
+        se(op1=='-' e op2=='/')entao
+            calculo = no1 -no2 /no3;
+            valida(calculo);
+        senao
+            se(op1=='*' e op2=='+')entao
+                calculo = no1 *no2 +no3;
+                valida(calculo);
+            senao
+                se(op1=='*' e op2=='-')entao
+                    calculo = no1 *no2 -no3;
+                    valida(calculo);
+                senao
+                    se(op1=='*' e op2=='*')entao
+                        calculo = no1 *no2 *no3;
+                        valida(calculo);
+                    senao
+                        se(op1=='*' e op2=='/')entao
+                            calculo = no1 *no2 /no3;
+                            valida(calculo);
+                        senao
+                            se(op1=='/' e op2=='+')entao
+                                calculo = no1 /no2 +no3;
+                                valida(calculo);
+                            senao
+                                se(op1=='/' e op2=='-')entao
+                                    calculo = no1 /no2 -no3;
+                                    valida(calculo);
+                                senao
+                                    se(op1=='/' e op2=='*')entao
+                                            calculo = no1 /no2 *no3;
+                                            valida(calculo);
+                                        senao
+                                            se(op1=='/' e op2=='/')entao
+                                                calculo = no1 /no2 /no3;
+                                                valida(calculo);
+                                            fimSe
+                                    fimSe
+                                fimSe
+                            fimSe    
+                        fimSe
+                    fimSe
+                fimSe
+            fimSe
+        fimSe    
+    fimSe
+                        fimSe
+                    fimSe
+                fimSe
+            fimSe
+        fimSe    
+    fimSe
+    
+    retorna calculo;
+fimFuncao
+
+procedimento valida(inteiro valor)
+
+    se(valor%2 == 0)entao
+        escreva("O resultado da operação e um numero par, ");
+    senao
+        escreva("O resultado da operação e um numero ímpar, ");
+    fimSe
+    
+fimProcedimento
+
+

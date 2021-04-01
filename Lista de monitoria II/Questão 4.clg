@@ -1,0 +1,118 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo: Elaborar uma análise sobre o recebimento de salário regular através do
+//            registro em carteira profissional dos funcionários no país.  
+//  Entrada : Para cada assalariado o seu sexo e o valor de seu salário.
+//  Saída   : Salário em reais, a classificação por extenso em relação ao salário 
+//            mínimo, e sexo por extenso,  a quantidade de assalariados com salário 
+//            abaixo do salário mínimo e a quantidade assalariados com salário acima 
+//            do salário mínimo.
+
+
+principal
+	// Declarações
+
+	texto classificacao;
+	real salario;
+	caracter sexo, continuar;
+	inteiro contAcima, contAbaixo, contIgual;
+
+	// Instruções
+
+    contAcima=0;
+    contAbaixo=0;
+    contIgual=0;
+
+	faca
+		
+		limpaTela();
+		sexo = leValidaSexo();
+	    salario = leValidaSalario();
+        classificacao = classificaSalario(salario);
+     
+        se(salario < 954)entao
+	        contAbaixo = contAbaixo + 1;
+	    senao
+		    se(salario == 954)entao
+		        contIgual = contIgual + 1;
+		    senao
+		        contAcima = contAcima + 1;
+		    fimSe
+	    fimSe    
+        
+        limpaTela();
+        mostraClassifica(salario, classificacao, sexo);
+		
+		escreval("");
+		escreva("Pressione 's' para novo assalariado: ");
+		leiaCaracter(continuar);
+		continuar = maiusculoCaracter(continuar);
+		
+	enquanto(continuar == 'S');
+
+	limpaTela();
+	escreval("A quantidade de assalariados com salário abaixo do salário mínimo é ", contAbaixo);
+	escreval("A quantidade de assalariados com salário acima do salário mínimo é ", contAcima);
+
+fimPrincipal
+
+funcao caracter leValidaSexo()
+
+	caracter sexo;
+	
+	faca
+		escreva("Digite o sexo, 'F' para feminino e 'M' para masculino: ");
+		leiaCaracter(sexo);
+		sexo = maiusculoCaracter(sexo);
+		
+		se(sexo!='F' e sexo!='M')entao
+			escreval("Sexo inválida.");
+		fimSe
+	enquanto(sexo!='F' e sexo!='M');
+	
+	retorna sexo;
+fimFuncao
+
+funcao real leValidaSalario()
+
+	real salario;
+	
+	faca
+		escreva("Digite a valor do salário: ");
+		leia(salario);
+		
+		se(salario<2)entao
+			escreval("Valor indicado inválida.");
+		fimSe
+	enquanto(salario<2);
+	
+	retorna salario;
+fimFuncao
+
+funcao texto classificaSalario(inteiro Salario)
+    
+    se(Salario < 954)entao
+	        retorna "Abaixo";
+	    senao
+		    se(Salario == 954)entao
+		        retorna "Igual";
+		    senao
+		        retorna "Acima";
+		fimSe
+	fimSe    
+
+fimFuncao
+
+procedimento mostraClassifica(real Salario, texto Classificacao, caracter Sexo)
+
+    escreval("Salário do assalariado é: R$", Salario::2);
+    escreval("A classificação deste assalariado é ", Classificacao ," do salário mínimo");
+    
+    se(Sexo=='F')entao
+        escreval("O sexo do assalariado é feminino");
+    senao
+        escreval("O sexo do assalariado é masculino");
+    fimSe
+
+fimProcedimento
+

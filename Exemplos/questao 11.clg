@@ -1,0 +1,78 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	texto n1,n2,n3;
+	inteiro i,qtd_jurados, nota;
+	inteiro no1,no2,no3;
+	inteiro no01,no02,no03;
+
+	// Instruções
+
+	escreva("Insira o nome do primeiro participante: ");
+	leia(n1);
+	escreva("Insira o nome do segundo participante: ");
+	leia(n2);
+	escreva("Insira o nome do terceiro participante: ");
+	leia(n3);
+	escreva("Insira quantidade de jurados: ");
+	leia(qtd_jurados);
+
+	no1 =0;
+	no2 =0;
+	no3 =0;
+	
+	para(i de 1 ate qtd_jurados passo 1)faca
+
+        escreval("");
+        escreva(i,"º jurado nota ao ",n1," : ");
+        leia(no01);
+        escreva(i,"º jurado nota ao ",n2," : ");
+        leia(no02);
+        escreva(i,"º jurado nota ao ",n3," : ");
+        leia(no03);
+        escreval("");
+
+        no1 = no1 + no01;
+        no2 = no2 + no02;  
+        no3 = no3 + no03;      
+
+    fimPara
+
+	se(no1>=1)entao
+	escreval("Ponto total de ",n1," é: ",no1);
+	senao
+	escreval("Não há Pontos para",n1);
+	fimSe
+	se(no2>=1)entao
+	escreval("Ponto total de ",n2," é: ",no2);
+	senao
+	escreval("Não há Pontos para",n2);
+	fimSe
+	se(no3>=1)entao
+	escreval("Ponto total de ",n3," é: ",no3);
+	senao
+	escreval("Não há Pontos para",n3);
+	fimSe
+
+	se(no1>no2 e no1>no3)entao
+	    escreval("");
+	    escreval("O ganhador do concurso de piada é: ",n1);
+	senao
+	    se(no2>no1 e no2>no3)entao
+	        escreval("");
+	        escreval("O ganhador do concurso de piada é: ",n2);
+	    senao
+	        escreval("");
+	        escreval("O ganhador do concurso de piada é: ",n3);
+	    fimSe
+	fimSe    
+
+fimPrincipal
+

@@ -1,0 +1,25 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	real hde,Hpe;
+	inteiro quanto;
+
+	// Instruções
+
+	escreval("Altura dos desgraus da escada a ser percorrido: ");
+	leia(hde);
+	escreval("Altura que deseja percorrer durando o percurso na escada: ");
+	leia(Hpe);
+
+	quanto = Hpe / hde;
+
+	escreval("A quantidade de degraus que deveram ser percorrido para alcançar o objetivo é: ",quanto," Degraus");
+
+fimPrincipal

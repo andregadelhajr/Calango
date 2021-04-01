@@ -1,0 +1,28 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	inteiro h,g,t;
+
+	// Instruções
+
+	escreva("Escreva o tempo gasto em horas utilizados ao acesso a internet: ");
+	leia(h);
+
+	se(h<=20)entao
+	    escreva("O valor a ser pago é o valor basico de 30R$");
+	senao
+
+        t=(h-20);
+        g=30*(1+(0.1*t));
+         
+	    escreva("O valor a ser pago com acrescimos de 10% por horas a mais utilizado é: ",g,"R$");
+	fimSe    
+
+fimPrincipal

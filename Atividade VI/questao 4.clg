@@ -1,0 +1,44 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	inteiro valor1, valor2;
+
+	// Instruções
+
+	escreval("Insira valores para serem trocados");
+	escreva("Insira o primeiro valor: ");
+	leia(valor1);
+	escreva("Insira o segundo valor: ");
+	leia(valor2);
+
+	limpaTela();
+	escreval("Primeiro valor inserido é: ",valor1);
+	escreval("Segundo valor inserido é: ",valor2);
+	escreval("");
+	
+	mudar(valor1, valor2);
+
+	escreval("Os novos valores trocados aleatoriamente ficam como: ");
+	escreval("Novo valor do primeiro valor é: ",valor1);
+	escreval("Novo valor do segundo valor é: ",valor2);
+
+fimPrincipal
+
+procedimento mudar(ref inteiro v1, ref inteiro v2)
+
+    se(v1>0)entao
+    v1 = aleatorio(100);
+    fimSe
+
+    se(v2>0)entao
+    v2 = aleatorio(100);
+    fimSe
+
+fimProcedimento

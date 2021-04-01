@@ -1,0 +1,30 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	inteiro i,valor,F;
+
+	// Instruções
+
+    F = 1;
+    i= 1;
+
+	escreva("Valor para calcular fatorial: ");
+	leia(valor);
+
+    faca
+
+    i = i + 1;
+    F = F * i; 
+	  
+    enquanto(i < valor);
+	
+	escreval("valor de ",valor,"! é: ",F);
+
+fimPrincipal

@@ -1,0 +1,29 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	real v,d,p,cv,cp;
+
+	// Instruções
+
+	escreva("O valor total a ser pago em reais da compra do cliente é:");
+	leia(v);
+
+	d = v * 0.90;
+	p = v / 3;
+	cv = d * 0.05;
+	cp = v * 0.05;
+
+	escreval("As opcões do seu cliente de compra sobre o valor total a ser pago são:");
+	escreval("1. O total a ser pago pelo cliente com desconto de 10% é: ","R$",d);
+	escreval("2. No parcelamento de 3x sem juros, sera pago: ","R$",p);
+	escreval("3. A comissão do vendedor, no caso da venda ser a vista é: ","R$",cv);
+	escreval("4. A comissão do vendedor, no caso da venda ser parcelada é: ","R$",cp);
+
+fimPrincipal

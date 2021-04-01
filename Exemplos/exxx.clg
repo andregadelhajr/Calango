@@ -1,0 +1,27 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+
+	// Instruções
+
+	Insira();
+
+fimPrincipal
+
+procedimento Insira()
+
+    inteiro n;
+
+    escreva("insira valor:");
+    leia(n);
+
+    escreval("numero:", n);
+
+fimProcedimento

@@ -1,0 +1,42 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+	
+	inteiro dia, mes, ano;
+
+	// Instruções
+	
+	escreval("Digite uma data(dd/mm/aaaa)");
+	leia(dia, mes, ano);
+
+	escreval("");
+	escreval("A data: ",dia,"/",mes,"/",ano," é ", validaData(dia,mes,ano));
+
+fimPrincipal
+funcao logico validaData(inteiro d, inteiro m, inteiro a)
+
+	se((d>=1 e d<=31)e(m==1 ou m==3 ou m==5 ou m==7 ou m==8 ou m==10 ou m==12))entao
+		retorna verdadeiro;
+	senao
+		se((d>=1 e d<=30)e(m==4 ou m==6 ou m==9 ou m==11))entao
+			retorna verdadeiro;
+		senao
+			se(d>=1 e d<=28 e m==2)entao
+				retorna verdadeiro;
+			senao
+				se((d==29 e m==2)e((a%4 ==0 e a%100!=0)ou(a%400==0)))entao
+					retorna verdadeiro;
+				senao
+					retorna falso;
+				fimSe
+			fimSe
+		fimSe
+	fimSe
+	
+fimFuncao

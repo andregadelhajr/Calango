@@ -1,0 +1,39 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo: Calcular a potencição de uma valor X elevado a n. 
+//  Entrada : Valor da base, valor do expoente.
+//  Saída   : Resultado final da potenciação.
+
+
+principal
+	// Declarações
+
+	real valor;
+	inteiro elevado;
+
+	// Instruções
+
+	escreva("Insira abaixo valores para potenciação de uma valor");
+	escreval("");
+	escreva("Insira aqui o valor da base: ");
+	leia(valor);
+	escreva("Insira aqui o valor do expoente: ");
+	leia(elevado);
+
+	escreval("O valor de ",valor,"^",elevado," sera igual a: ", valorElevado(valor, elevado));
+
+fimPrincipal
+
+funcao real valorElevado(real X, inteiro n)
+
+    real potencia;
+    inteiro i;
+
+    potencia=1;
+
+    para(i de 1 ate n passo 1)faca
+    potencia = potencia * X;
+    fimPara
+    
+    retorna potencia;
+fimFuncao

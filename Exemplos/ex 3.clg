@@ -1,0 +1,27 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	inteiro i,m,t;
+
+	// Instruções
+
+	para(i de 2 ate 9 passo 1)faca
+	escreval("tabuada do ",i," é:");
+	    para(t de 1 ate 10 passo 1)faca
+
+	m = i * t;
+
+	escreval(i,"x",t,": ",m);
+
+	fimPara
+	escreval("");
+	fimPara
+
+fimPrincipal

@@ -1,0 +1,13 @@
+algoritmo listamoni_ativ1B;
+// Síntese
+//  Objetivo:  Inserir dados de apartamentos e mostrar ao gerente de vendas de um determinada imobiliária.
+//   Entrada : Ano do imóvel, construtora de até 200 apartamentos, valores dos imóveis, disponibilidade de venda.
+//  Saída   : Apartamento mais novo, quantidade de imóveis com valores superior a R$500.000,00 e sua disponibilidade.
+
+
+principal
+	// Declarações
+
+	// Instruções
+
+fimPrincipal

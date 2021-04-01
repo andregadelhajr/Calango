@@ -1,0 +1,35 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+	real altura, menor;
+	caracter continuar;
+	inteiro i;
+
+	// Instruções
+	i=0;
+	faca
+		escreval("Digite a altura da pessoa:");
+		leia(altura);
+		se(i==0)entao
+			menor = altura;
+		senao
+			se(altura<menor)entao
+				menor = altura;
+			fimSe
+		fimSe
+		i = i + 1;
+		escreval("Pressione 's' para nova altura ou 'n' para sair");
+		leiaCaracter(continuar);
+		continuar = maiusculoCaracter(continuar);
+	enquanto(continuar=='S');
+
+	escreval("A menor altura é ", menor);
+
+fimPrincipal
+

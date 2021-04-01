@@ -1,0 +1,28 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo: 
+//  Entrada : 
+//  Saída   : A distância entre os dois pontos
+
+
+principal
+	// Declarações
+	
+	real x1, y1, x2, y2, d;
+
+	// Instruções
+	
+	escreva("Digite o valor de x para o ponto P: ");
+	leia(x1);
+	escreva("Digite o valor de y para o ponto P: ");
+	leia(y1);
+	escreva("Digite o valor de x para o ponto Q: ");
+	leia(x2);
+	escreva("Digite o valor de y para o ponto Q: ");
+	leia(y2);
+	
+	d = raizQuadrada(exp((x2-x1),2) + exp((y2-y1),2));
+	
+	escreval("A distância entre os pontos P e Q é de ", d::3);
+
+fimPrincipal

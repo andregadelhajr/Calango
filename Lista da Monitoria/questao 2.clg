@@ -1,0 +1,32 @@
+algoritmo listamoni_ques2;
+// Síntese
+//  Objetivo: Calcule o juro do cheque especial durante um mês.  
+//  Entrada : A taxa de juros mensal e o valor da dívida. 
+//  Saída   : Total dos juros e o novo valor total que deve ser pago ao banco da divida.
+
+
+principal
+	// Declarações
+
+	real juros, valor,valornovo,valorjuros;
+
+	// Instruções
+
+	escreva("Digite a taxa de juros mensal em porcentagem: ");
+	leia(juros);
+	escreva("Digite o valor da dívida atual: ");
+	leia(valor);
+
+	valornovo = valor*(1+(juros/100));
+	valorjuros = valornovo - valor;
+
+	escreval(" ");
+	escreval("Total dos juros que deve ser pago ao banco: ",valorjuros);
+	escreval("Novo valor total que deve ser pago ao banco: ",valornovo);
+
+	
+
+
+	
+
+fimPrincipal

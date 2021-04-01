@@ -1,0 +1,72 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  Apresentar o vencedor de um concurso de piadas.
+//  Entrada : Nome dos finalistas, quantidade de juízes, e a nota de cada candidato informado por cada juiz.
+//  Saída   : Nome dos finalistas e seus respectivos pontos, nome do vencedor e o total de pontos.
+
+
+principal
+	// Declarações
+	inteiro i, Njuizes, no1, no2, no3;
+	inteiro total1, total2, total3;
+	texto n1, n2, n3;
+	
+	// Instruções
+	total1=0;
+	total2=0;
+	total3=0;
+	escreva("Digite a quantidade de Juízes: ");
+	leia(Njuizes);
+	escreva("Digite o nome do primeiro finalista: ");
+	leia(n1);
+	escreva("Digite o nome do segundo finalista: ");
+	leia(n2);
+	escreva("Digite o nome do terceiro finalista: ");
+	leia(n3);	
+	para(i de 1 ate Njuizes passo 1)faca
+	    limpaTela();
+		escreval("Notas do ",i,"º Juiz:");
+		faca
+			escreval("Informe a nota do ", n1);
+			leia(no1);
+			se(no1<0 ou no1>100)entao
+				escreval("Nota inválida!");
+			fimSe
+		enquanto(no1<0 ou no1>100);
+		faca
+			escreval("Informe a nota do ", n2);
+			leia(no2);
+			se(no2<0 ou no2>100)entao
+				escreval("Nota inválida!");
+			fimSe
+		enquanto(no2<0 ou no2>100);
+		faca
+			escreval("Informe a nota do ", n3);
+			leia(no3);
+			se(no3<0 ou no3>100)entao
+				escreval("Nota inválida!");
+			fimSe
+		enquanto(no3<0 ou no3>100);
+		total1 = total1+no1;
+		total2 = total2+no2;
+		total3 = total3+no3;
+	fimPara
+	limpaTela();
+	escreval("Apresentação das notas:");
+	escreval(n1," ",total1," pontos.");
+	escreval(n2," ",total2," pontos.");
+	escreval(n3," ",total3," pontos.");
+	se(total1>total2 e total1>total3)entao
+		escreval(n1," vencedor com ", total1, " pontos.");
+	senao
+		se(total2>total3 e total2>total1)entao
+			escreval(n2," vencedor com ", total2, " pontos.");
+		senao
+			se(total3>total1 e total3>total2)entao
+				escreval(n3," vencedor com ", total3, " pontos.");
+			senao
+				escreval("Não houve vencedor.");
+			fimSe
+		fimSe
+	fimSe
+fimPrincipal

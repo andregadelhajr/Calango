@@ -1,0 +1,27 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	texto nome;
+
+	// Instruções
+
+	nome = levalidaNome();
+	escreval("Nome: ", nome);
+
+fimPrincipal
+
+funcao texto levalidaNome()
+    texto nome;
+    faca
+        escreval("Digite o nome: ");
+        leia(nome);
+    enquanto(comparaTexto(nome,"")==0);
+    retorna nome;
+fimFuncao    

@@ -1,0 +1,34 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo: Verefica se uma valor de entrada e primo 
+//  Entrada : valor
+//  Saída   : se valor e primo
+
+
+principal
+	// Declarações
+
+	inteiro v,p,i;
+
+	// Instruções
+
+	escreva("Insira um valor inteiro: ");
+	leia(v);
+
+	p = 0;
+
+	para(i de 2 ate v/2 passo 1)faca
+
+        se(v%i == 0)entao
+        p = p + 1;
+        fimSe
+	    
+	fimPara 
+
+	se(p == 0)entao
+	    escreva("Numero ",v," é primo");
+    senao
+        escreva("Numero ",v," não é primo");
+	fimSe
+
+fimPrincipal

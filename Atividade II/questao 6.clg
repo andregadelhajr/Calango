@@ -1,0 +1,26 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	inteiro n, r;
+
+	// Instruções
+
+	escreva("Escrava qual quer numero e veja se ele é par ou ímpar: ");
+	leia(n);
+
+    r = n%2;	
+
+	se( r==0 )entao
+	    escreval("Numero e par");
+	senao 
+	    escreval("numero e ímpar");
+	fimSe        
+
+fimPrincipal

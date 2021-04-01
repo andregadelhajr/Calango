@@ -1,0 +1,27 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  Verificar três valores para compor lados de um triângulo
+//  Entrada : Três valores numericos
+//  Saída   : Se os valores podem compor lados de um triângulo
+
+
+principal
+	// Declarações
+	
+	real l1, l2, l3;
+
+	// Instruções
+	escreva("Digite o primeiro valor: ");
+	leia(l1);
+	escreva("Digite o segundo valor: ");
+	leia(l2);
+	escreva("Digite o terceiro valor: ");
+	leia(l3);
+	se(l1<l2+l3 e l2<l3+l1 e l3<l1+l2)entao
+		escreval("Os valores compoem lados de um triângulo");
+	senao
+		escreval("Não é um triângulo");
+	fimSe
+
+fimPrincipal
+

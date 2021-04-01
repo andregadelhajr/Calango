@@ -1,0 +1,69 @@
+algoritmo listamoni_ques5;
+// Síntese
+//  Objetivo:  Verificar o consumo de kwh de cada família.
+//  Entrada : kwh, mês e ano da investigação
+//  Saída   : Categoria de consumo, o mês e o ano da investigação, e se ano é bissexto ou não.
+
+
+principal
+	// Declarações
+	
+	real kwh;
+	inteiro mes, ano, i;
+	caracter continuar;
+	
+	// Instruções
+	
+	i=1;
+	
+	faca
+		escreval(i,"ª família.");
+		faca
+			escreva("Digite o consumo de energia: ");
+			leia(kwh);
+			se(kwh<0)entao
+				escreval("Valor inválido.");
+			fimSe
+		enquanto(kwh<0);
+		
+		faca
+			escreva("Digite o mês da investigação: ");
+			leia(mes);
+			se(mes<1 ou mes>12)entao
+				escreval("Mês inválido.");
+			fimSe
+		enquanto(mes<1 ou mes>12);
+		
+		escreva("Digite o ano da investigação: ");
+		leia(ano);
+		escreval("O consumo da família foi de ", kwh," Kwh.");
+		
+		se(kwh<=30)entao
+			escreval("Consumo BAIXO.");
+		senao
+			se(kwh>30 e kwh<=100)entao
+				escreval("Consumo NORMAL.");
+			senao
+				se(kwh>100 e kwh<=220)entao
+					escreval("Consumo ALTO.");
+				senao
+					escreval("Consumo EXAGERADO.");	
+				fimSe
+			fimSe
+		fimSe
+		
+		escreval(mes,"/", ano);
+		
+		se((ano%4 == 0 e ano%100 !=0)ou(ano%400 == 0))entao
+			escreval("Ano bissexto.");
+		senao
+			escreval("O ano não é bissexto.");
+		fimSe
+		
+		escreva("Pressione 's' para nova pesquisa: ");
+		leiaCaracter(continuar);
+		i = i + 1;
+	enquanto(continuar=='s' ou continuar=='S');
+		
+
+fimPrincipal

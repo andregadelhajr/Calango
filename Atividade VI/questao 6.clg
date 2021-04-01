@@ -1,0 +1,65 @@
+﻿algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	texto nome;
+	inteiro idade;
+	caracter sexo;
+
+	// Instruções
+	
+	escreval("Digite as informsções pedida abaixo: ");
+	escreva("Digite um nome: ");
+	leia(nome);
+	escreva("Digite uma idade: ");
+	leia(idade);
+	escreva("Digite 'F' para feminino e 'M' para masculino: ");
+	leiaCaracter(sexo);
+	sexo=maiusculoCaracter(sexo);
+
+	escreval("");
+	escreval("O nome digitado é ",validaNome(nome));
+	escreval("O idade digitado é ",validaIdade(idade));
+	escreval("O sexo digitado é ",validaSexo(sexo));
+
+fimPrincipal
+
+funcao logico validaNome(texto n)
+
+    texto v;
+    v = "";
+
+	se(comparaTexto(n, v) == 0)entao
+		retorna falso;
+	senao
+	    retorna verdadeiro;
+	fimSe	
+	
+fimFuncao
+
+funcao logico validaIdade(inteiro i)
+
+	se(i<0)entao
+		retorna falso;
+	senao
+	    retorna verdadeiro; 
+	fimSe
+	
+fimFuncao
+
+funcao logico validaSexo(caracter s)
+
+	
+    se(s != 'F' e s != 'M')entao
+		retorna falso;
+	senao
+	    retorna verdadeiro;
+	fimSe
+	
+fimFuncao

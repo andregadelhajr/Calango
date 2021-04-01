@@ -1,0 +1,97 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	real v,d,p,cv,cp;
+	inteiro opcao;
+
+	// Instruções
+
+	escreva("O valor total a ser pago em reais da compra do cliente é:");
+	leia(v);
+
+fimPrincipal
+
+	funcao inicio() 
+	
+        menu();
+        
+    fimFuncao   
+    
+            
+    funcao menu()
+    
+        opcao = 0
+        enquanto(opcao != 5)faca
+        
+            escreva("Menu de opções: ")
+            escreva("1. O total a ser pago pelo cliente com desconto de 10% é: ");
+	        escreva("2. No parcelamento de 3x sem juros, sera pago: ");
+	        escreva("3. A comissão do vendedor, no caso da venda ser a vista é: ");
+	        escreva("4. A comissão do vendedor, no caso da venda ser parcelada é: ");
+	        escreva("5. Sair");
+            escreva("Digite a opção desejada: ")
+            leia(opcao)   // usuário escolhe a opção
+            
+            se(opcao==1)entao
+            
+                desconto()
+            fimSe
+            se(opcao==2)entao
+            
+                parcelamento()
+            fimSe
+            se(opcao==3)entao
+            
+                comissao()
+            fimSe
+            se(opcao==4)entao
+            
+                comissao_parcelamento()
+            fimSe
+            se(opcao==5)entao
+            
+                escreva("fim do programa.")
+            fimSe
+
+            
+        fimEnquanto
+    fimFuncao
+            
+    funcao desconto()
+    d = v * 0.90;
+	
+    escreval("1. O total a ser pago pelo cliente com desconto de 10% é: ","R$",d);
+    
+    fimFuncao
+
+    funcao parcelamento()
+	p = v / 3;
+	
+	escreval("2. No parcelamento de 3x sem juros, sera pago: ","R$",p);
+	  
+    fimFuncao
+
+    funcao comissao()
+	cv = d * 0.05;
+
+	escreval("3. A comissão do vendedor, no caso da venda ser a vista é: ","R$",cv);
+    
+    fimFuncao
+
+    funcao comissao_parcelamento()
+	cp = v * 0.05;
+
+	escreval("4. A comissão do vendedor, no caso da venda ser parcelada é: ","R$",cp);    
+  
+    fimFuncao
+
+	
+
+

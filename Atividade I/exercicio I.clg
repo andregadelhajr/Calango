@@ -1,0 +1,24 @@
+algoritmo exercicio;
+// Síntese
+//  Objetivo:  transforma horas em minutos e segundos 
+//  Entrada :  a quantidade de horas 
+//  Saída   :  as horas e suas conversoes para minutos e segundos
+
+
+principal
+	// Declarações
+
+	inteiro h,m, s;
+
+	// Instruções
+
+	escreva("Digite a quantidade de horas: ");
+	leia(h);
+
+	m = h*60;
+	s = m*60;
+
+	escreval(h," horas convertida para minutos é ", m);
+	escreval(h," horas convertida para segundos é ", s);
+
+fimPrincipal

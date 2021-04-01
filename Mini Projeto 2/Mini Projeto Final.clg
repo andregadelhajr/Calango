@@ -1,0 +1,157 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  Realizar o armazenamento de dados de uma pesquisa e exibir 
+//				diversos relatórios
+//  Entrada : Quantidade de UPAS, o nome da localidade, quantidade de 
+//				pacientes atendidos por UPA, classificação de risco, idade.
+//  Saída   : Quantidade de atendimentos por UPA de acordo com a idade, 
+//				quantidade de atendimentos por classificação de risco, 
+//				quantidade total de atendimentos de crianças e idosos com 
+//				classificação de risco vermelho.
+
+
+principal
+	// Declarações
+	inteiro qtdeUPAS, qtdePacientes, idade;
+	texto nomeLocalidade;
+	caracter classificacao, continuar;
+	inteiro controle1, controle2, contCrianca, contAdolescente, contAdulto, contIdoso;
+	inteiro contVermelho, contLaranja, contAmarelo, contQtdeTotal;
+
+	// Instruções
+	qtdeUPAS = leValidaQtdeUpas();
+	contQtdeTotal = 0;
+	para(controle1 de 1 ate qtdeUPAS passo 1)faca
+		nomeLocalidade = leValidaNomeLocalidade();
+		qtdePacientes = leValidaQtdePacientes();
+		contCrianca = 0;
+		contAdolescente = 0;
+		contAdulto = 0;
+		contIdoso = 0;
+		contVermelho = 0;
+		contLaranja = 0;
+		contAmarelo = 0;
+		para(controle2 de 1 ate qtdePacientes passo 1)faca
+			classificacao = leValidaClassificacao();
+			idade = leValidaIdade();
+			//Contabiliza a quantidade de pessoas por idade por UPA
+			se(idade<13)entao
+				contCrianca = contCrianca+1;
+			senao
+				se(idade>=13 e idade<=17)entao
+					contAdolescente = contAdolescente+1;
+				senao
+					se(idade>=18 e idade<=64)entao
+						contAdulto = contAdulto+1;
+					senao
+						contIdoso = contIdoso+1;
+					fimSe
+				fimSe
+			fimSe
+			//contabilizar a quantidade de atendimentos por upa de acordo com a classificação
+			escolha(classificacao)
+				caso 'V'
+					contVermelho = contVermelho+1;
+					se(idade<13 ou idade>64)entao
+						contQtdeTotal = contQtdeTotal+1;
+					fimSe
+					interrompa;
+				caso 'L'
+					contLaranja = contLaranja+1;
+					interrompa;
+				caso 'A'
+					contAmarelo = contAmarelo+1;
+					interrompa;
+			fimEscolha		
+		fimPara
+		exibeQuantidadeAtendimento(contCrianca, contAdolescente, contAdulto, contIdoso, nomeLocalidade);
+		exibeQuantidadeClassificacaoRisco(contVermelho, contLaranja, contAmarelo);
+	fimPara
+	escreval("Pressione qualquer tecla para exibir o relatório final.");
+	leiaCaracter(continuar);
+	apresentaQuantidadeTotalAtendimento(contQtdeTotal);
+fimPrincipal
+
+funcao inteiro leValidaQtdeUpas()
+	inteiro qtdeUpas;
+	faca
+		escreval("Digite a quantidade de UPAS:");
+		leia(qtdeUpas);
+		se(qtdeUpas<10 ou qtdeUpas>15)entao
+			escreval("Quantidade inválida.");
+		fimSe
+	enquanto(qtdeUpas<10 ou qtdeUpas>15);
+	retorna qtdeUpas;
+fimFuncao
+
+funcao texto leValidaNomeLocalidade()
+	texto nome;
+	faca
+		escreval("Digite o nome da localidade:");
+		leia(nome);
+		se(comparaTexto(nome,"")==0)entao
+			escreval("Nome da localidade é obrigatório.");
+		fimSe
+	enquanto(comparaTexto(nome,"")==0);
+	retorna nome;
+fimFuncao
+
+funcao inteiro leValidaQtdePacientes()
+	inteiro qtdePacientes;
+	faca
+		escreval("Digite a quantidade de pacientes:");
+		leia(qtdePacientes);
+		se(qtdePacientes<0)entao
+			escreval("Quantidade inválida.");
+		fimSe
+	enquanto(qtdePacientes<0);
+	retorna qtdePacientes;
+fimFuncao
+
+funcao caracter leValidaClassificacao()
+	caracter classificacao;
+	faca
+		escreval("Escolha a classificação de risco:");
+		escreval("V - vermelho");
+		escreval("L - laranja");
+		escreval("A - amarelo");
+		leiaCaracter(classificacao);
+		classificacao = maiusculoCaracter(classificacao);
+		se(classificacao!='V' e classificacao!='L' e classificacao!='A')entao
+			escreval("Classificação inválida.");
+		fimSe
+	enquanto(classificacao!='V' e classificacao!='L' e classificacao!='A');
+	retorna classificacao;
+fimFuncao
+
+funcao inteiro leValidaIdade()
+	inteiro idade;
+	faca
+		escreval("Digite a idade:");
+		leia(idade);
+		se(idade<0)entao
+			escreval("Idade inválida.");
+		fimSe
+	enquanto(idade<0);
+	retorna idade;
+fimFuncao
+
+procedimento exibeQuantidadeAtendimento(inteiro contCrianca, inteiro contAdolescente, inteiro contAdulto, inteiro contIdoso, texto localidade)
+	escreval("Localidade da UPA é ", localidade);
+	escreval("Quantidade de crianças = ", contCrianca);
+	escreval("Quantidade de adolescentes = ", contAdolescente);
+	escreval("Quantidade de adultos = ", contAdulto);
+	escreval("Quantidade de idosos = ", contIdoso);
+fimProcedimento
+
+procedimento exibeQuantidadeClassificacaoRisco(inteiro contVermelho, inteiro contLaranja, inteiro contAmarelo)
+	escreval("Quantidade com classificação vermelho = ", contVermelho);
+	escreval("Quantidade com classificação laranja = ", contLaranja);
+	escreval("Quantidade com classificação amarelo = ", contAmarelo);
+fimProcedimento
+
+procedimento apresentaQuantidadeTotalAtendimento(inteiro contQtdeTotal)
+	limpaTela();
+	escreva("A quantidade total de pacientes crianças e idosos que tiveram");
+	escreval(" classificação de risco vermelho de todas as UPAS presentes na pesquisa foi de ", contQtdeTotal);
+fimProcedimento

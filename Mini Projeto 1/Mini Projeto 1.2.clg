@@ -1,0 +1,117 @@
+algoritmo semNome;
+//Nome: Andre Junior   Matrícula: UC20104726   Questão 2 Avaliação A1
+// Síntese
+//  Objetivo: Ajudar João a saber sobre feriados/recessos acadêmicos e eventos importantes da Universidade Católica de Brasília. 
+//  Entrada : Data, mes e ano.
+//  Saída   : o evento que pode ou nao ter no dia selecionado.
+
+principal
+ // Declarações
+
+	inteiro data,mes,ano;
+	caracter continuar;
+
+	// Instruções
+
+    faca
+    
+    faca
+        limpaTela();
+        escreval("A seguir apresentar data, mes, ano para informações sobre eventos:");
+		escreva("Insira um ano desejado: ");
+	    leia(ano);
+
+	    se(ano !=2020)entao
+			escreval("Ano inválida. Tente novamente.");
+			escreval("");
+		fimSe
+	enquanto(ano != 2020);  
+    faca
+		escreva("Insira um mês desejado: ");
+	    leia(mes);
+
+	    se(mes<=7 ou mes>=13)entao
+			escreval("Mês inválido. Tente novamente.");
+			escreval("");
+		fimSe
+	enquanto(mes<=7 ou mes>=13);
+	faca
+		escreva("Insira um dia desejado: ");
+	    leia(data);
+
+	    se((data<1 ou data>=31))entao
+			escreval("Data inválida. Tente novamente.");
+			escreval("");
+		fimSe
+	enquanto(data<1 ou data>=31);
+	
+
+    se(data == 3 e mes == 8)entao
+        limpaTela();
+        escreval("");
+        escreval("Evento: Início do semestre letivo");
+        escreval("");
+    senao
+        se(data == 11 e mes == 8)entao
+            limpaTela();
+            escreval("");
+            escreval("Evento: Dia do Estudante");
+            escreval("");
+        senao
+            se(data == 7 e mes == 9)entao
+                limpaTela();
+                escreval("");
+                escreval("Evento: Proclamação da Independência do Brasil");
+                escreval("");
+                senao
+                    se((data >=10 e data <=13 )e mes == 10)entao
+                        limpaTela();
+                        escreval("");
+                        escreval("Evento: Recesso acadêmico");
+                        escreval("");
+                    senao
+                        se(data == 15 e mes == 10)entao
+                            limpaTela();
+                            escreval("");
+                            escreval("Evento: Dia do professor");
+                            escreval("");
+                        senao
+                            se(data == 2 e mes == 11)entao
+                                limpaTela();
+                                escreval("");
+                                escreval("Evento: Finados");
+                                escreval("");
+                            senao
+                                se(data == 30 e mes == 11)entao
+                                    limpaTela();
+                                    escreval("");
+                                    escreval("Evento: Dia do evangélico");
+                                    escreval("");
+                                senao
+                                    se(data == 9 e mes == 12)entao
+                                        limpaTela();
+                                        escreval("");
+                                        escreval("Evento: Término do semestre letivo");
+                                        escreval("");
+                                    senao
+                                        limpaTela();
+                                        escreval("");
+                                        escreval("Dia letivo normal");
+                                        escreval("");
+                                    fimSe
+                                fimSe
+                            fimSe
+                        fimSe
+                    fimSe
+            fimSe
+        fimSe    
+    fimSe
+
+    escreval("Deseja continuar pesquisando mais datas, digite 'S' se sim: ");
+    leiaCaracter(continuar);
+    enquanto(continuar == 's' ou continuar == 'S');
+
+    
+    
+
+fimPrincipal

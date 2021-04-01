@@ -1,0 +1,44 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	caracter continuar;
+	inteiro valor1, valor2;
+	real divisao;
+
+	// Instruções
+	faca
+
+	    escreva("valor1: ");
+	    leia(valor2);
+	    escreva("valor2:  ");
+	    leia(valor2);
+
+	    divisao = calcula(valor1, valor2);
+
+	    escreval("Valor da divisao: ", divisao);
+	    
+	
+	    escreva("Pessione 's' para novo funcionário: ");
+	    leiaCaracter(continuar);
+	    continuar = maiusculoCaracter(continuar);
+
+	enquanto(continuar=='S');
+
+fimPrincipal
+
+funcao real calcula(inteiro v1, inteiro v2)
+
+    real d;
+    
+    d = v1 / v2;
+    
+    retorna d;
+fimFuncao 
+    

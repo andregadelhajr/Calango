@@ -1,0 +1,37 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	inteiro valor1, valor2;
+
+	// Instruções
+
+	escreva("insira um valor: ");
+	leia(valor1);
+	escreva("insira um valor: ");
+	leia(valor2);
+
+	escreval("v1:",valor1);
+	escreval("v2:",valor2);
+	
+	zera(valor1, valor2);
+	
+	escreval("v1:",valor1);
+	escreval("v2:",valor2);
+
+fimPrincipal
+
+procedimento zera(ref inteiro v1, ref inteiro v2)
+
+    inteiro aux;
+    aux=0;
+    v1=aux;
+    v2=v1;
+
+fimProcedimento

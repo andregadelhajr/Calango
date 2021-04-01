@@ -1,0 +1,72 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	inteiro Colho,Ccabelo ;
+	inteiro idade,i,i1,T, maior;
+	caracter sexo;
+	real porc;
+
+	// Instruções
+
+	T=0;
+	i=0;
+	i1=0;
+
+	faca
+
+	escreva("Insira 'M' para sexo masculino 'F' para feminino da pessoa: ");
+	leiaCaracter(sexo);
+	escreval("");
+	escreval("Insira a opcçao para a cor dos olhos da pessoa: ");
+	escreval("1. azuis");
+	escreval("2. verdes");
+	escreval("3. castanhos");
+	escreval("4. pretos");
+	escreval("Opção");
+	leia(Colho);
+	escreval("");
+	escreval("Insira a opcçao para a cor do cabelo da pessoa: ");
+	escreval("1. loiros");
+	escreval("2. castanhos");
+	escreval("3. pretos");
+	escreva("Opção: ");
+	leia(Ccabelo);
+	escreval("");
+	escreva("Insira a idade da pessoa: ");
+	leia(idade);
+	escreval("=================================================================");
+
+	T = T + 1;
+
+	se((sexo=='F' ou sexo=='f') e (idade>=18 e idade<=35) e (Colho ==2) e (Ccabelo ==1))entao
+	i = i + 1;
+	porc = (i / T)*100;
+	fimSe
+
+	se(i1==0)entao
+	    maior = idade;
+	senao
+	    se(idade>maior)entao
+		maior = idade;
+	    fimSe
+	fimSe
+	i1 = i1 + 1;
+
+	enquanto(idade != -1);
+
+	escreval("Maior idade é: ",maior);
+	se(i>=1)entao
+	escreval("A porcentagem pedida é: ",porc);
+	senao
+	escreval("Não a porcentagem pedida: ");
+	fimSe
+	
+
+fimPrincipal

@@ -1,0 +1,29 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:calcula o valor de H segundo a formula dada  
+//  Entrada :valor de N
+//  Saída   :valor de H
+
+
+principal
+	// Declarações
+
+	inteiro i;
+	real H, N;
+
+	// Instruções
+
+	escreva("Insira um valor N para realização da formula: ");
+	leia(N);
+
+	H = 1;
+
+	para(i de 2 ate N passo 1)faca
+
+	    H = H + (1 / i);
+
+	fimPara
+
+	escreval("O valor de H é igual a: ", H);
+
+fimPrincipal

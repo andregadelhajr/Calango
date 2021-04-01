@@ -1,0 +1,13 @@
+algoritmo listamoni_ativ1A;
+// Síntese
+//  Objetivo: Inserir informações de seleções campeãs do mundo, afim de descobrir quantas copas ja aconteram.  
+//  Entrada : Dados de cadastro de todas as seleções de futebol que já foram campeãs da Copa do Mundo.
+//  Saída   : Quantas copas já aconteceram (até 2018), quantidade de vezes que cada uma destas seleções foi campeã.
+
+
+principal
+	// Declarações
+
+	// Instruções
+
+fimPrincipal

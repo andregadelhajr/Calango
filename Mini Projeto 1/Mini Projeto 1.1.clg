@@ -1,0 +1,110 @@
+algoritmo semNome;
+//Nome: Andre Junior   Matrícula: UC20104726   Questão 1 Avaliação A1
+// Síntese
+//  Objetivo: Pesquisa com moradores do DF, com o objetivo de se escolher o time de maior popularidade do DF.
+//  Entrada : Nome do entrevistador, a quantidade de pessoas entrevistadas, que deverá ser maior que 10, e para cada pessoa seu voto.
+//  Saída   : Time de maior popularidade do DF.
+
+
+principal
+	// Declarações
+
+	inteiro Nparticipantes,i;
+	inteiro NB,NG,NC,N;
+	caracter resposta;
+	texto nome;
+
+	// Instruções
+
+	escreva("O nome do entrevistador da pesquisa: ");
+	leia(nome);
+	escreval("");
+
+    faca
+		escreva("Numero de participantes da pesquisa: ");
+	    leia(Nparticipantes);
+
+	    se(Nparticipantes<=10)entao
+			escreval("Valor inválido. Numero de participantes tem que ser superior a 10.");
+			escreval("");
+		fimSe
+	enquanto(Nparticipantes<=10);
+
+	NB = 0;
+	NG = 0;
+	NC = 0;
+
+    para(i de 1 ate Nparticipantes passo 1)faca    
+
+    faca
+        escreval("");
+        escreval("==================================================================================");
+        escreval("Resposta do ",i,"º entrevistado sobre qual equipe e mais popular: ");
+        escreval("B. Brasiliense");
+        escreval("G. Gama");
+        escreval("C. Ceilândia");
+        escreva("Opção: ");
+        leiaCaracter(resposta);
+
+    se(resposta != 'G' e resposta != 'B' e resposta != 'C' e resposta != 'g' e resposta != 'b' e resposta != 'c')entao
+		escreval("Valor inválido. Tente Novamente.");
+		escreval("");
+	fimSe
+    enquanto(resposta != 'G' e resposta != 'B' e resposta != 'C' e resposta != 'g' e resposta != 'b' e resposta != 'c');
+    
+
+    se(resposta == 'B' ou resposta == 'b')entao
+        NB = NB + 1;
+    senao
+        se(resposta == 'G' ou resposta == 'g')entao
+            NG = NG + 1;
+        senao
+            se(resposta == 'C' ou resposta == 'c')entao
+                NC = NC + 1;
+            fimSe
+        fimSe    
+    fimSe
+
+    fimPara
+
+    se(NB >=1)entao
+    limpaTela();
+    escreval("A quantidade de votos do time Brasiliense foi: ",NB);
+    senao
+    limpaTela();
+    escreval("Nenhum voto foi contabilizado.");
+    fimSe
+
+    se(NG >=1)entao
+    escreval("A quantidade de votos do time Gama foi: ",NG);
+    senao
+    escreval("Nenhum voto foi contabilizado.");
+    fimSe
+
+    se(NC >=1)entao
+    escreval("A quantidade de votos do time Ceilândia foi: ",NC);
+    senao
+    escreval("Nenhum voto foi contabilizado.");
+    fimSe
+
+    se(NB > NG e NB > NC)entao
+        escreval("");
+        escreva("A pesquisa realizada por ",nome," com os entrevistados diz que o time do Brasiliense tem a maior popularidade.");
+    senao
+        se(NG > NB e NG > NC)entao
+            escreval("");
+            escreva("A pesquisa realizada por ",nome," com os entrevistados diz que o time do Gama tem a maior popularidade.");
+        senao
+            se(NC > NB e NC > NG)entao
+                escreval("");
+                escreva("A pesquisa realizada por ",nome," com os entrevistados diz que o time do Ceilândia tem a maior popularidade.");
+            senao
+                se(NB == NG e NB == NC e NG == NC)entao
+                escreval("");
+                escreva("A pesquisa realizada por ",nome," com os entrevistados diz que não houve preferência por nenhum time.");
+                fimSe
+            fimSe
+        fimSe    
+    fimSe
+
+fimPrincipal

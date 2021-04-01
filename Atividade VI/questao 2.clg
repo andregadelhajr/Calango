@@ -1,0 +1,30 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :  
+
+
+principal
+	// Declarações
+
+	real celsius;
+
+	// Instruções
+
+	escreval("Conversão de Celsius para Fahrenheit");
+	escreva("Temperatura em Celsius: ");
+	leia(celsius);
+
+	escreval("");
+	escreval(celsius,"ºC em Fahrenheit é ", Fahrenheit(celsius),"ºF");
+
+fimPrincipal
+
+funcao real  Fahrenheit(real C)
+
+    real F;
+
+    F = (C*9.0/5.0) + 32.0;
+    retorna F; 
+fimFuncao

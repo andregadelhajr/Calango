@@ -1,0 +1,82 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	inteiro ano_nascimento, ano_atual;
+
+	// Instruções
+
+	apresentaClassificacao(ano_nascimento, ano_atual);
+
+fimPrincipal
+
+procedimento apresentaClassificacao(inteiro anoN, inteiro anoA)
+
+    caracter continuar;
+    inteiro i;
+
+	faca
+	limpaTela();
+    escreva("Insira aqui o ano atual: ");
+	leia(anoA);
+	
+	faca
+	escreva("Insira aqui o ano do seu nascimento: ");
+    leia(anoN);
+
+    se(anoN>anoA)entao
+        escreval("Valor invalida, tente novamente com um outro valor");
+        escreval("");
+    fimSe
+    enquanto(anoN>anoA);
+
+    i = calcularIdade(anoN, anoA);
+
+	escreva("");
+	escreva("Sua idade é ",i);
+	obtemNivel(i);
+    escreva("");
+    
+    escreva("");
+    escreval("Insira 's' para continuar, caso dejesa na operação: ");
+    leiaCaracter(continuar);
+	enquanto(continuar=='S' ou continuar=='s');
+
+fimProcedimento
+
+funcao inteiro calcularIdade(inteiro aN, inteiro aA)
+    inteiro i;
+
+    i = aA - aN;
+
+    retorna i;
+fimFuncao
+
+procedimento obtemNivel(inteiro i)
+
+    se(i<=10)entao
+        escreval(" com classificação no grupo de Criança");
+    senao
+        se(i>10 e i<18)entao
+            escreval(" com classificação no grupo de Adolescente");
+        senao
+            se(i>=18 e i<25)entao
+                escreval(" com classificação no grupo de Jovem");
+            senao
+                se(i>=25 e i<=58)entao
+                    escreval(" com classificação no grupo de Adulto");
+                senao
+                    escreval(" com classificação no grupo de Idoso");  
+                fimSe
+            fimSe    
+        fimSe
+    fimSe
+
+fimProcedimento
+

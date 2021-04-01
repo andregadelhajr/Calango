@@ -1,0 +1,40 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	texto n1, n2, n3;
+	real h1, h2, h3;
+
+	// Instruções
+	
+	escreva("informe o nome da primeira pessoa: ");
+	leia(n1);
+	escreva("Insira aqui a altura da primeira pessoa: ");
+	leia(h1);
+	escreva("informe o nome da segunda pessoa: ");
+	leia(n2);
+	escreva("Insira aqui a altura da segunda pessoa: ");
+	leia(h2);
+	escreva("informe o nome da terceira pessoa: ");
+	leia(n3);
+	escreva("Insira aqui a altura da terceira pessoa: ");
+	leia(h3);
+	
+	se(h1<h3 e h1<h2)entao
+	    escreval("O(a) ",n1," e a menor das pessoas faladas, medindo: ",h1);
+	senao
+	    se(h2<h3 e h2<h1)entao
+	       escreval("O(a) ",n2," e a menor das pessoas faladas, medindo: ",h2);      
+	    senao
+	        escreval("O(a) ",n3," e a menor das pessoas faladas, medindo: ",h3);
+	    fimSe       
+	fimSe       
+
+fimPrincipal
+

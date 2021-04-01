@@ -1,0 +1,24 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	inteiro aT,i,AN;
+
+	// Instruções
+
+	escreva("Insira aqui ano atual(escreva os quatro digitos do ano por favor): ");
+	leia(aT);
+	escreva("Insira aqui sua idade de aniversario no ano atual: ");
+	leia(i);
+
+	AN = aT - i;
+
+	escreva("O ano em que você nasceu de acordo com os dados fornecidos é: ", AN);
+
+fimPrincipal

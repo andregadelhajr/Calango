@@ -1,0 +1,62 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo: Calcular media das notas do alunos. 
+//  Entrada : Nota 1 e 2 dos alunos.
+//  Saída   : Mostra media aritmedica e duas medias ponderadas diferentes doas notas do aluno.
+
+
+principal
+	// Declarações
+
+	real nota1, nota2, nota;
+    caracter continuar;
+    texto nome;
+
+	// Instruções
+
+	faca
+	   
+	    limpaTela();
+	    escreval("Insira informaçoes para calcular media do aluno: ");
+	    escreva("Escreva a nome do aluno: ");
+        leia(nome);
+	    escreva("Escreva a nota teórica  do(a) ",nome,": ");
+        leia(nota1);
+        escreva("Escreva a nota prática do(a) ",nome,": ");
+        leia(nota2);
+
+        nota = media(nota1, nota2); 
+        
+        escreval("");
+        escreval("================================================================================");
+	    escreval("O resultado da media do ",nome," é: ",nota);
+	    aprovacoes(nota);
+	    escreval("================================================================================");
+	    escreval("");
+
+		
+		escreval("Pressione 's' para inserir novas notas: ");
+		leiaCaracter(continuar);
+		continuar = maiusculoCaracter(continuar);
+	enquanto(continuar=='S');
+
+fimPrincipal
+
+funcao real media(real n1, real n2)
+
+    real mediaAluno;
+    
+    mediaAluno = (n1*3+n2*7) / 10;
+    
+    retorna mediaAluno;
+fimFuncao
+
+procedimento aprovacoes(real n)
+
+    se(n>=0 e n<=7)entao
+        escreval("Aluno reprovado.");
+    senao
+        escreval("Aluno aprovado.");
+    fimSe
+
+fimProcedimento

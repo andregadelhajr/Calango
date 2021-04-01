@@ -1,0 +1,30 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	caracter s;
+	texto n;
+
+	// Instruções
+	
+	escreva("informe o nome: ");
+	leia(n);
+	escreva("escreva m para mulher e h para homem para o seu sexo: ");
+	leiaCaracter(s);
+	se(s=='m' ou s=='M')entao
+	     escreval("sra.",n);
+	senao
+	    se(s=='h' ou s=='H')entao
+	       escreval("sr.",n);
+	    senao
+	        escreval("erro, tente novamente");
+	    fimSe       
+	fimSe       
+
+fimPrincipal

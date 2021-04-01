@@ -1,0 +1,81 @@
+algoritmo listamoni_ques4;
+// Síntese
+//  Objetivo: Pesquisa para verificar qual a equipe da formula 1 que foi mais privilegiada.  
+//  Entrada : Respotas dos participante acerca das equipes.
+//  Saída   : Equipe mais previlegiada.
+
+
+principal
+	// Declarações
+
+	inteiro Nparticipantes,i;
+	inteiro NF,NM,NR,NO;
+	caracter resposta;
+
+	// Instruções
+
+    faca
+		escreva("Numero de participantes da pesquisa: ");
+	    leia(Nparticipantes);
+
+	    se(Nparticipantes<=10)entao
+			escreval("Valor inválido. Numero de participantes tem que ser superior a 10.");
+			escreval("");
+		fimSe
+	enquanto(Nparticipantes<=10);
+
+	NF = 0;
+	NM = 0;
+	NR = 0;
+	NO = 0;
+
+    para(i de 1 ate Nparticipantes passo 1)faca    
+
+    escreval("");
+    escreval("==================================================================================");
+    escreval("Resposta do ",i,"º participante sobre qual equipe esta sendo previlegiada: ");
+    escreval("F. Ferrari");
+    escreval("M. Mercedes");
+    escreval("R. RedBull");
+    escreval("O. Outros.");
+    escreva("Opção: ");
+    leiaCaracter(resposta);
+    
+
+    se(resposta == 'f' ou resposta == 'F')entao
+        NF = NF + 1;
+    senao
+        se(resposta == 'm' ou resposta == 'M')entao
+            NM = NM + 1;
+        senao
+            se(resposta == 'r' ou resposta == 'R')entao
+                NR = NR + 1;
+            senao
+                NO = NO + 1;
+            fimSe
+        fimSe    
+    fimSe
+
+    fimPara
+
+    se(NF > NM e NF > NR e NF > NO)entao
+        escreval("");
+        escreva("A pesquisa com o participantes diz que a equipe Ferrari esta sendo previlegiada.");
+    senao
+        se(NM > NF e NM > NR e NM > NO)entao
+            escreval("");
+            escreva("A pesquisa com o participantes diz que a equipe Mercedes esta sendo previlegiada.");
+        senao
+            se(NR > NF e NR > NM e NR > NO)entao
+                escreval("");
+                escreva("A pesquisa com o participantes diz que a equipe RedBull esta sendo previlegiada.");
+            senao
+                se(NO > NF e NO > NM e NO > NR)entao
+                escreval("");
+                escreva("A pesquisa com o participantes diz que Outra equipe esta sendo previlegiada.");
+                fimSe
+            fimSe
+        fimSe    
+    fimSe
+
+fimPrincipal

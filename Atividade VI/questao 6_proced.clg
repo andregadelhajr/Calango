@@ -1,0 +1,73 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	texto nome;
+	inteiro idade;
+	caracter sexo, continuar;
+
+	// Instruções
+	
+	faca
+	limpaTela();
+	escreval("Digite as informsções pedida abaixo: ");
+	escreva("Digite um nome: ");
+	leia(nome);
+	escreva("Digite uma idade: ");
+	leia(idade);
+	escreva("Digite 'F' para feminino e 'M' para masculino: ");
+	leiaCaracter(sexo);
+	sexo=maiusculoCaracter(sexo);
+
+	escreval("");
+	validaNome(nome);
+	validaIdade(idade);
+	validaSexo(sexo);
+
+	escreval("");
+	escreval("Digite 'S' para caso dejese repetir operação: ");
+	leiaCaracter(continuar);
+	continuar=maiusculoCaracter(continuar);
+	enquanto(continuar == 'S');
+
+fimPrincipal
+
+procedimento validaNome(texto n)
+
+    texto v;
+    v = "";
+
+	se(comparaTexto(n, v) == 0)entao
+		escreval("O nome não pode ser vazio");
+	senao
+	    escreval("O nome digitado é: ",n);
+	fimSe	
+	
+fimProcedimento
+
+procedimento validaIdade(inteiro i)
+
+	se(i<0)entao
+		escreval("A idade não pode ser negativo.");
+	senao
+	    escreval("O idade digitado é: ",i);
+	fimSe
+	
+fimProcedimento
+
+procedimento validaSexo(caracter s)
+
+	
+    se(s != 'F' e s != 'M')entao
+		escreval("O sexo só poder ser 'M' masculino ou 'F' para feminino.");
+	senao
+	    escreval("O sexo digitado é: ",s);
+	fimSe
+	
+fimProcedimento

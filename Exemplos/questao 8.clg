@@ -1,0 +1,54 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+    
+    real preco, precoN;
+	inteiro Nproduto,i;
+	texto nome;
+	caracter continuar;
+
+	// Instruções
+
+	escreva("Informa o número de produtos que possui: ");
+	leia(Nproduto);
+    escreval("===========================================");
+	i = 0;
+
+	faca
+
+    i = i + 1;
+    
+	se(i<Nproduto)entao
+    escreva("Informe o nome do produto: ");
+    leia(nome);
+    escreva("Preço do produto: ");
+    leia(preco);
+    escreval(" ");
+
+    precoN = preco*1.10;
+
+    escreval("O novo preço desse produto é: ",precoN);
+    escreval("==========================================");
+	senao
+	    se(i==Nproduto)entao
+	        escreva("Informe o nome do produto: ");
+            leia(nome);
+            escreva("Preço do produto: ");
+            leia(preco);
+            escreval(" ");
+        
+	        escreval("O novo preço desse produto é: ",preco-1);
+	        escreval("==========================================");
+	        escreval(" ");
+	    fimSe
+	fimSe
+
+	enquanto(i != Nproduto+1);
+
+fimPrincipal

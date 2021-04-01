@@ -1,0 +1,21 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  quantos rolos o construtor precisa
+//  Entrada : quantidade em metros de fio a ser utilizado
+//  Saída   : quantos rolos o construtor precisa
+
+
+principal
+	// Declarações
+
+	real r,q;
+
+	// Instruções
+
+	escreva("Quantos metros de fio que serão utilizados: ");
+	leia(q);
+	
+	r=q/50; 
+    escreval("A quantidade de rolos que seram precisos: ",r);
+
+fimPrincipal

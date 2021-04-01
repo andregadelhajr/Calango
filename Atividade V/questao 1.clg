@@ -1,0 +1,39 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo: Ler altura de até cinco pessoas e apresente a média aritmética.
+//  Entrada : Altura das pessoas.
+//  Saída   : Media aritmética entre as pessoas.
+
+
+principal
+	// Declarações
+	
+	real altura, soma, media;
+	inteiro i;
+	caracter continuar;
+	
+	// Instruções
+	
+	i=0;
+	soma=0;
+	
+	faca
+		escreva("Insira a altura da ", i+1,"ª pessoa: ");
+		leia(altura);
+		
+		soma = soma + altura;
+		i = i + 1;
+		
+		escreval("Pressione 's' para nova altura.");
+		leiaCaracter(continuar);
+	enquanto(i<5 e continuar=='s' ou continuar=='S');
+
+	media = calculaMedia(soma, i);
+	escreval("A média das altura é: ", media);
+	
+fimPrincipal
+
+funcao real calculaMedia(real soma, inteiro qtde)
+	retorna soma/qtde;
+fimFuncao
+

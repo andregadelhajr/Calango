@@ -1,0 +1,204 @@
+algoritmo semNome;
+// Nome: Andre Jr Matrícula: UC20104726
+
+// Síntese
+//  Objetivo: verifique a quantidade de atendimentos realizados nas
+//            UPAS do Distrito Federal. 
+//  Entrada : o nome da localidade, quantidade de pacientes atendidos 
+//            na referida UPA, classificação de risco e a idade.
+//  Saída   : o nome da localização da UPA onde a pesquisa foi realizada, 
+//            a quantidade de pacientes atendidos por idade, a quantidade 
+//            de pacientes atendidos na UPA de acordo com a classificação
+//            de risco a quantidade total de pacientes crianças e 
+//            idosos que tiveram classificação de risco vermelho. 
+
+
+
+
+principal
+	// Declarações
+
+	inteiro numeroUPA, qtdePacientes, idade, i, i2;
+	texto nomeLocalidade;
+	caracter classificacao; 
+
+	// Instruções
+
+    numeroUPA = leValidaQuantidade();
+	
+	para(i de 1 ate numeroUPA passo 1)faca
+	    nomeLocalidade = leValidaLocalidade();
+	    qtdePacientes = leValidaPacientes(); 
+		
+		para(i2 de 1 ate qtdePacientes passo 1)faca
+		idade = leValidaIdade(); 
+	    classificacao = leValidaClassificacaoPaciente();
+	    
+		fimPara
+     
+	    exibeQuantidadeAtendimento(qtdePacientes, nomeLocalidade, idade);
+	    exibeQuantidadeClassificacaoRisco(qtdePacientes, classificacao); 
+		
+	fimPara
+	
+	apresentaQuantidadeTotalAtendimento(classificacao,idade);
+
+fimPrincipal
+
+funcao inteiro leValidaQuantidade()
+	inteiro qtde;
+	faca
+		escreval("Digite o número de UPAs a ser pesquisado:");
+		leia(qtde);
+		se(qtde<2)entao
+		    escreval("");
+			escreval("Número inválido.");
+		fimSe
+	enquanto(qtde<2);
+	retorna qtde;
+fimFuncao
+
+funcao texto leValidaLocalidade()
+	texto localidade;
+	faca
+		escreval("Digite o nome da localidade da UPA:");
+		leia(localidade);
+		se(comparaTexto(localidade,"")==0)entao
+		    escreval("");
+			escreval("Nome da localidade é obrigatório.");
+		fimSe
+	enquanto(comparaTexto(localidade,"")==0);
+	retorna localidade;
+fimFuncao
+
+funcao inteiro leValidaPacientes()
+	inteiro qtde;
+	faca
+		escreval("Digite a quantidade de pacientes da UPA:");
+		leia(qtde);
+		se(qtde<1)entao
+		    escreval("");
+			escreval("Quantidade inválida.");
+		fimSe
+	enquanto(qtde<1);
+	retorna qtde;
+fimFuncao
+
+funcao inteiro leValidaIdade()
+	inteiro idade;
+	faca
+		escreval("Digite a idade do paciente:");
+		leia(idade);
+		se(idade<0)entao
+		    escreval("");
+			escreval("Idade inválida.");
+		fimSe
+	enquanto(idade<0);
+	retorna idade;
+fimFuncao
+
+funcao caracter leValidaClassificacaoPaciente()
+	caracter classificacao;
+	faca
+		escreval("Digite a classificação do paciente: ");
+		escreval("V - Vermelho");
+		escreval("L - Laranja");
+		escreval("A - Amarelo");
+		leiaCaracter(classificacao);
+		classificacao = maiusculoCaracter(classificacao);
+		se(classificacao!='V' e classificacao!='L' e classificacao!='A')entao
+		    escreval("");
+			escreval("Classificação de paciente inválida.");
+		fimSe
+	enquanto(classificacao!='V' e classificacao!='L' e classificacao!='A');
+	retorna classificacao;
+fimFuncao
+
+procedimento exibeQuantidadeAtendimento(inteiro qtdePacientes, texto nomeLocalidade, inteiro idade)
+
+    inteiro contCrianca, contAdolecente, contAdulto, contIdoso, i;
+    
+        contCrianca = 0;
+        contAdolecente = 0;
+        contAdulto = 0; 
+        contIdoso = 0;
+
+			
+			se(idade<13)entao
+				contCrianca=contCrianca+1;
+			senao
+			    se(idade>=13 e idade<=17)entao
+				    contAdolecente=contAdolecente+1;
+				senao
+				    se(idade>=18 e idade<=64)entao
+				        contAdulto=contAdulto+1;
+				    senao
+				        contIdoso=contIdoso+1;
+				    fimSe
+				fimSe
+			fimSe
+
+		
+		escreval("");
+		escreval("Na localidade ", nomeLocalidade);
+		escreval("Quantidade de pacientes por idade: ");
+		escreval("Crianças: ",contCrianca);
+		escreval("Adolecentes: ",contAdolecente);
+		escreval("Adultos: ",contAdulto);
+		escreval("Idosos: ",contIdoso);
+		
+
+fimProcedimento
+
+procedimento exibeQuantidadeClassificacaoRisco(inteiro qtdePacientes, caracter classificacao)
+
+   inteiro contVermelho, contLaranja, contAmarelo, i;
+    
+        contVermelho = 0;
+        contLaranja = 0;
+        contAmarelo = 0;
+		
+	
+			se(classificacao=='V')entao
+				contVermelho=contVermelho+1;
+			senao
+			    se(classificacao=='L')entao
+				    contLaranja=contLaranja+1;
+				senao
+				    contAmarelo=contAmarelo+1;
+				fimSe
+			fimSe
+		
+		escreval("");
+		escreval("Quantidade de pacientes por classificação: ");
+		escreval("Vermelhos: ",contVermelho);
+		escreval("Laranjas: ",contLaranja);
+		escreval("Amarelos: ",contAmarelo);
+		escreval("");
+
+fimProcedimento
+
+procedimento apresentaQuantidadeTotalAtendimento(caracter classificacao, inteiro idade)
+
+    inteiro soma, somaIdososVermelhas;
+
+    soma=0;
+    somaIdososVermelhas=0;
+    
+    
+			
+			se((idade>=18 e idade<=64) e classificacao=='V')entao
+				somaIdososVermelhas=somaIdososVermelhas+1;
+		    senao
+			    se(idade<=13  e classificacao=='V')entao
+				    soma=soma+1;
+			    fimSe
+		   fimSe
+			
+
+	
+	escreval("A quantidade de classificação de risco vermelho de todas as UPAs foi:");
+	escreval("Total de crianças: ", soma);
+	escreval("Total de Idosos: ", somaIdososVermelhas);
+
+fimProcedimento

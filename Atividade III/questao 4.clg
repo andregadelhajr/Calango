@@ -1,0 +1,34 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada : Horário de início, a duração.
+//  Saída   : Horário do término da experiência
+
+
+principal
+	// Declarações
+	
+	inteiro h, m, s, d, hF, mF, sF;
+	inteiro tS;
+
+	// Instruções
+	
+	escreva("Digite o horário de início da experiência: HH:MM:SS: ");
+	leia(h, m, s);
+	escreva("Digite a duração em segundos da experiência: ");
+	leia(d); 
+	
+	tS = (h*60) * 60 + (m*60) + s + d;
+	mF = tS \ 60;
+	sF = tS % 60;
+	hF = mF \ 60;
+	mF = mF % 60;
+
+	se(hF>23)entao
+		hF = hF % 24;
+	fimSe
+
+	escreval("Horário de término da experiência: ");
+	escreval(hF,":",mF,":",sF);
+	
+fimPrincipal

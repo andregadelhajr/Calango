@@ -1,0 +1,26 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  calcular a media aritmetica de 3 numeros quais quer
+//  Entrada :  tres numeros quais quer
+//  Saída   :  media dos tres numeros
+
+
+principal
+	// Declarações
+
+	real m,n1,n2,n3;
+
+	// Instruções
+
+	escreva("Escreva o primeiro numero para o calculo da media: ");
+	leia(n1);
+	escreva("Escreva o segundo numero para o calculo da media: ");
+	leia(n2);
+	escreva("Escreva o terceiro numero para o calculo da media: ");
+    leia(n3);
+
+	m=(n1+n2+n3)/3;
+
+	escreval("O valor da media aritmetica dos tres numeros é: ",m);
+
+fimPrincipal

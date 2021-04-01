@@ -1,0 +1,30 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo: Criar ate o vigessimo termo da serie de Fibonacci
+//  Entrada : 
+//  Saída   : 20 termos
+
+
+principal
+	// Declarações
+
+	inteiro i, A, B, C;
+
+	// Instruções
+
+	A = 0;
+	B = 1;
+
+	escreval(" ",A);
+	escreval(" ",B);
+
+	para(i de 3 ate 20 passo 1)faca
+	
+    C = A + B;
+	escreval(" ",C);
+    A = B;
+    B = C;
+
+	fimPara
+
+fimPrincipal

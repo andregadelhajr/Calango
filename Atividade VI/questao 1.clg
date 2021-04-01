@@ -1,0 +1,32 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :  
+
+
+principal
+	// Declarações
+
+	real a, b;
+
+	// Instruções
+
+	escreval("Inserir valores para descobrir a hipotenusa de um triângulo");
+	escreva("1º cateto: ");
+	leia(a);
+	escreva("2º cateto: ");
+	leia(b);
+
+	escreval("");
+	escreval("O valor da hipotenusa do triângulo é ",hipotenusa(a,b));
+
+fimPrincipal
+
+funcao real hipotenusa(real cateto1, real cateto2)
+
+    real h;
+
+    h = raizQuadrada(exp(cateto1,2)+exp(cateto2,2));
+    retorna h; 
+fimFuncao

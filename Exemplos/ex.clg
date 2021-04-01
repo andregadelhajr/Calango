@@ -1,0 +1,29 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	real valor;
+	real soma;
+	inteiro controle;
+
+	// Instruções
+
+	soma = 0;
+
+	para(controle de 1 ate 10 passo 1)faca
+
+	    escreva("Digite o ",controle ,"º valor: ");
+	    leia(valor);
+	    soma = soma+valor;
+
+	fimPara
+
+	escreval("soma dos valores é: ",soma);
+
+fimPrincipal

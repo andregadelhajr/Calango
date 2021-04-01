@@ -1,0 +1,22 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo: calcular a area de uma circuferência  
+//  Entrada : o valor do raio de uma circuferência
+//  Saída   : area da circuferencia
+
+
+principal
+	// Declarações
+
+	real a,r;
+
+	// Instruções
+
+	escreva("Raio da circuferencia: ");
+	leia(r);
+	
+	a=r*r*3.14;
+
+	escreval("O raio da circuferencia é: ",a); 
+
+fimPrincipal

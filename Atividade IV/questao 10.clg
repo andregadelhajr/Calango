@@ -1,0 +1,29 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	inteiro i,n;
+
+	// Instruções
+
+	i = 0;
+
+	faca
+	    escreva("Insira um numero inteiro: ");
+	    leia(n);
+	    se(n>=0)entao
+            i = i + 1;	            
+	    fimSe
+	    
+
+	enquanto(i<100 e n>=0);
+
+	escreval("A quantidade total de numeros lidos é: ",i);
+
+fimPrincipal

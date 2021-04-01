@@ -1,0 +1,27 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	inteiro An,At,d;
+	texto n;
+
+	// Instruções
+
+	escreva("insira o nome: ");
+	leia(n);
+	escreva("insira o ano em que você nasceu: ");
+	leia(An);
+	escreva("insira o ano atual em que nos estamos: ");
+	leia(At);
+
+	d = (At-An)*365;
+
+	escreval(n," ja viveu, aproximadamente, ",d," dias");
+
+fimPrincipal

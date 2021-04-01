@@ -1,0 +1,30 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	inteiro N;
+	inteiro fatorial;
+	inteiro controle;
+
+	// Instruções
+
+	escreva("Digite o valor que deseja realizar o fatorial: ");
+	leia(N);
+
+	fatorial = 1;
+
+	para(controle de 2 ate N passo 1)faca
+
+	    fatorial = fatorial*controle;
+
+	fimPara
+
+	escreval(N,"! = ",fatorial);
+
+fimPrincipal

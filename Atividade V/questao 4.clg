@@ -1,0 +1,39 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	inteiro qtd,repro,apro,i;
+	real porcentagem;
+
+	// Instruções
+
+	escreva("Insira o numero de alunos matrículados na disciplina: ");
+	leia(qtd);
+	escreval("Insira o numero de alunos aprovados na disciplina: ");
+	leia(apro);
+	escreval("Insira o numero de alunos reprovados na disciplina: ");
+	leia(repro);
+
+	apresentaPorcentagem(apro, repro, qtd);
+
+fimPrincipal
+
+procedimento apresentaPorcentagem(inteiro passou, inteiro Npassou, inteiro qtd)
+
+    real result_p,result_a;
+    
+    result_a = (passou/qtd) * 100;
+    escreval("A porcenttagem de aprovados é: ",result_a,"%");  
+
+    result_p = (Npassou/qtd) * 100;
+    escreval("A porcenttagem de reprovados é: ",result_p,"%");          
+    
+fimProcedimento
+
+

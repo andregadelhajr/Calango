@@ -1,0 +1,76 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo: Calcular o salário de vários empregados a partir da quantidade de peças fabricadas.
+//  Entrada : A quantidade de peças fabricadas.
+//  Saída   : Salário do funcionário.
+
+
+principal
+	// Declarações
+	
+	inteiro qtdePecas;
+	real salario;
+	caracter continuar;
+
+	// Instruções
+	
+	faca
+     	
+		qtdePecas = validaQuantidade();
+		salario = calculaSalario(qtdePecas);
+		
+		mostraFinal(salario);
+		
+		escreval("Pressione 's' para novo funcionário:");
+		leiaCaracter(continuar);
+		continuar = maiusculoCaracter(continuar);
+		
+	enquanto(continuar == 'S');
+
+fimPrincipal
+
+
+funcao inteiro validaQuantidade()
+
+	inteiro qtde;
+	
+	faca
+		escreval("Digite a quantidade de peças:");
+		leia(qtde);
+		
+		se(qtde<0)entao
+			escreval("Quantidade inválida.");
+		fimSe
+	enquanto(qtde<0);
+	
+	retorna qtde;
+fimFuncao
+
+funcao real calculaSalario(inteiro qtdePecas)
+
+	real salario;
+	
+	salario = 600;
+	
+	se(qtdePecas<=50)entao
+		retorna salario;
+	senao
+		se(qtdePecas>50 e qtdePecas<=80)entao
+			salario = salario + (qtdePecas-50)*0.50;
+			retorna salario;
+		senao
+			salario = salario + (30*0.50) + (qtdePecas-80)*0.75;
+			retorna salario;
+		fimSe
+	fimSe
+	
+fimFuncao
+
+procedimento mostraFinal(real salario)
+
+	limpaTela();
+	escreval("O salário do funcionário é de R$", salario);
+	
+fimProcedimento
+
+

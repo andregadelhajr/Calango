@@ -1,0 +1,30 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  Calcular um aumento de 10% em cada produto do mercador
+//  Entrada : A quantidade de produtos, a identificação do produto e o preço
+//  Saída   : A identificação e o novo preço do produto.
+
+
+principal
+	// Declarações
+	
+	texto produto;
+	real preco, precoNovo;
+	caracter continuar;
+
+	// Instruções
+	faca
+		escreva("Digite a identificação do produto:");
+		leia(produto);
+		escreva("Digite o preço do produto:");
+		leia(preco);
+		
+		precoNovo = preco + ((preco * 10)/100);
+		
+		escreval("Produto: ", produto," Preço: R$", precoNovo);
+		escreval("Tem mais algum produto para calcular o aumento? s - sim ou n - não.");
+		leiaCaracter(continuar);
+	enquanto(continuar=='s' ou continuar=='S');
+	
+
+fimPrincipal

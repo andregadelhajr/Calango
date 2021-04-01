@@ -1,0 +1,28 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	inteiro n1, n2, r, i;
+
+	// Instruções
+
+	escreva("Digite o primeiro valor: ");
+	leia(n1);
+	escreva("Digite o segundo valor: ");
+	leia(n2);
+
+	r = 0;
+
+	para(i de 1 ate n1 passo 1)faca
+	    r = r + n2;
+	fimPara
+
+	escreval(n1,"x",n2,"=",r);    
+
+fimPrincipal

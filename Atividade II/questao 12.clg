@@ -1,0 +1,47 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+    inteiro d;
+
+	// Instruções
+
+	escreva("Qual o DDD a ser informado: ");
+	leia(d);
+
+    escolha(d)
+    caso 61
+        escreval("Este DDD pertence a cidade de Brasilia");
+        interrompa;
+    caso 71
+        escreval("Este DDD pertence a cidade de Salvador");
+        interrompa;
+    caso 11
+        escreval("Este DDD pertence a cidade de São Paulo");
+        interrompa;
+    caso 21
+        escreval("Este DDD pertence a cidade Rio de Janeiro");
+        interrompa;
+    caso 32
+        escreval("Este DDD pertence a cidade Juiz de Fora");
+        interrompa;
+    caso 19
+        escreval("Este DDD pertence a cidade de Campinas");
+        interrompa;
+    caso 27
+        escreval("Este DDD pertence a cidade de Vitoria");
+        interrompa;
+    caso 31
+        escreval("Este DDD pertence a cidade de Belo Horizinte");
+        interrompa;
+    outroCaso
+        escreval("Cidade no Brasil sem identificação");
+    fimEscolha                                 
+	
+fimPrincipal

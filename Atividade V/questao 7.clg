@@ -1,0 +1,45 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	real peso;
+
+	// Instruções
+
+	leValidaPeso(peso);
+
+fimPrincipal
+
+procedimento leValidaPeso(real p)
+
+	faca
+    escreva("Insira aqui um peso em Kg: ");
+	leia(p);
+	
+	se(p<0)entao
+	    escreval("Peso inserido, tente novamente");
+	senao
+	    se(p==0)entao
+	        escreval("Peso inserido e igual a zero, tente novamente");    
+	    fimSe
+	fimSe
+	enquanto(p<=0);
+
+	escreval("Peso inserido em Kg transformado para g é: ", apresentaGrama(p));
+	escreval("Peso inserido em Kg transformado para t é: ", apresentaTonelada(p));
+
+fimProcedimento
+
+funcao real apresentaGrama(real p)
+    retorna p*1000; 
+fimFuncao
+
+funcao real apresentaTonelada(real p)
+    retorna p/1000;
+fimFuncao

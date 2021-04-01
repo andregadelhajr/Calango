@@ -1,0 +1,74 @@
+algoritmo listamoni_ques3;
+// Síntese
+//  Objetivo: Será solicitado a leitura de informações de jogadores de um time de vôlei
+//  Entrada : Quantidade de jogadores do time, para cada um o número e idade.
+//  Saída   : Número do jogador, idade do jogador mais velho e do jogador mais jovem, média da idade de todos os jogadores.  
+
+
+principal
+	// Declarações
+
+	inteiro Njogadores, idade, numero, i;
+	inteiro  maior, menor,I,Nidade,Nmaior,Nmenor;
+	real media;
+
+	// Instruções
+
+	escreval("Insira aqui o numero de jogadores do time de vôlei: ");
+	leia(Njogadores);
+
+	I=0;
+	Nidade=0;
+	maior=0;
+	menor=0;
+	Nmaior=0;
+	Nmenor=0;
+
+	para(i de 1 ate Njogadores passo 1)faca
+
+	escreval("Insira informacões acerca do ",i,"º jogador:");
+	escreva("Numero da camisa: ");
+	leia(numero);
+	escreva("Idade do mesmo: ");
+	leia(idade);
+	
+    se(idade > 0)entao
+	Nidade = Nidade + idade;
+	fimSe
+
+	se(I == 0)entao
+	maior = idade;
+	Nmaior = numero;
+	senao
+	    se(idade > maior)entao
+            maior = idade;
+            Nmaior = numero;
+	    fimSe
+    fimSe
+
+    se(I == 0)entao
+	menor = idade;
+	Nmenor = numero;
+	senao
+	    se(idade < menor)entao
+            menor = idade;
+	        Nmenor = numero;
+	    fimSe
+    fimSe
+	I = I + 1;
+
+	fimPara
+
+	se(Njogadores <= 0)entao
+        escreval("Não há jogadores. Tente novamente.");
+	senao
+	    se(Njogadores == 1)entao
+	        escreval("A apenas um jogador.");
+	    senao
+	        escreval("O jogador de numero ",Nmaior," com idade de ",maior," anos é o jogador mais velho.");
+	        escreval("O jogador de numero ",Nmenor," com idade de ",menor," anos é o jogador mais jovem.");
+	        escreval("A media das idade é ",Nidade/Njogadores);
+	    fimSe
+	fimSe
+
+fimPrincipal

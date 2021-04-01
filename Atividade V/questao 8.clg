@@ -1,0 +1,71 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	texto nome;
+	inteiro classificacao;
+
+	// Instruções
+
+	leValidaNC(nome,classificacao);
+
+fimPrincipal
+
+procedimento leValidaNC(texto n, inteiro c)
+
+    caracter continuar;
+
+	faca
+	limpaTela();
+    escreva("Insira aqui o nome da cidade: ");
+	leia(n);
+	faca
+	escreva("Insira aqui o tamanho da cidade por habitantes: ");
+    leia(c);
+
+    se(c<=0)entao
+        escreval("Valor invalida, tente novamente com um outro valor");
+        escreval("");
+    fimSe
+    enquanto(c<=0);
+
+	escreva("A cidade com o nome de ",n," e classificada como um(a) ");
+    classifica(c);
+    escreva("");
+    
+    escreval("Insira 's' para continuar, caso dejesa na operação: ");
+    leiaCaracter(continuar);
+	enquanto(continuar=='S' ou continuar=='s');
+
+fimProcedimento
+
+procedimento classifica(inteiro c)
+
+    se(c<=0)entao
+        escreval("nada");
+    senao
+        se(c>0 e c<=5000)entao
+            escreval("VILA");
+        senao
+            se(c>5000 e c<=15000)entao
+                escreval("DISTRITO");
+            senao
+                se(c>15000 e c<=1000000)entao
+                    escreval("CIDADE");
+                senao
+                    se(c>1000000)entao
+                        escreval("METROPOLE");
+                    fimSe    
+                fimSe
+            fimSe    
+        fimSe
+    fimSe
+    
+fimProcedimento
+

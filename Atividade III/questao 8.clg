@@ -1,0 +1,58 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	inteiro d;
+	texto n,c;
+	real r,D,i;
+
+	// Instruções
+
+	escreva("Qual o nome do contribuinte: ");
+	leia(n);
+	escreva("Insira o numero do CPF: ");
+	leia(c);
+	escreva("Insira o numeros de dependentes: ");
+	leia(d);
+	escreva("Qual a sua renda mensal ",n," : ");
+	leia(r);
+
+	D = ((996*5)/100) * d;
+	r = r - D;
+
+	se(r <= 2*996)entao
+	    escreval("Isento de impostos.");
+	senao
+	    se(r > 2*996 e r <=3*996)entao
+
+	        i = r*0.075;
+	        escreval("Imposto a ser pago é: ",i::2,"R$"); 
+	    senao
+	        se(r > 3*996 e r <=5*996)entao
+
+                i = r*0.15;
+	            escreval("Imposto a ser pago é: ",i::2,"R$");  
+	        senao
+	            se(r > 5*996 e r <=7*996)entao
+
+                i = r*0.225;
+	            escreval("Imposto a ser pago é: ",i::2,"R$");
+	            senao
+	                se(r > 7*996 )entao
+
+                    i = r*0.275;
+	                escreval("Imposto a ser paga é: ",i::2,"R$");
+	                fimSe
+	            fimSe
+	        fimSe
+	    fimSe      
+	fimSe
+	
+fimPrincipal
+

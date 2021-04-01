@@ -1,0 +1,23 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	inteiro d,Vb,Vl;
+
+	// Instruções
+
+	escreva("Numeros de dias que o encanador ira realizar de serviço: ");
+	leia(d);
+
+	Vb = 40*d;
+	Vl = Vb*(0.89);
+
+	escreval("O encanador por ",d," dias, ira ganhar de salario bruto e liquido em reais respectivamente: ",Vb,"R$ e ",Vl,"R$");
+
+fimPrincipal

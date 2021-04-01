@@ -1,0 +1,67 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+
+	real peso1,peso2,peso3;
+
+	// Instruções
+
+	escreval("Insira pesos de três pessoas diferentes: ");
+	escreval(""); 
+	escreva("Insira o peso da primeira pessoa: ");
+	leia(peso1);
+	escreva("Insira o peso da segunda pessoa: ");
+	leia(peso2);
+	escreva("Insira o peso da terceira pessoa: ");
+	leia(peso3);
+	escreval("");
+
+	escreval("Os pesos inseridos foram: ",peso1,",",peso2,",",peso3);
+	escreval("");
+
+	pesos(peso1, peso2, peso3);
+
+	escreval("Os pesos inseridos em ordem crescente é: ",peso1,",",peso2,",",peso3);
+	escreval("");
+
+fimPrincipal
+
+procedimento pesos(ref real p1, ref real p2, ref real p3)
+    real aux;
+
+    se(p2<p1 e p2<p3)entao
+		aux = p2;
+		p2 = p1;
+		p1 = aux;
+		se(p2>p3)entao
+			aux = p2;
+			p2 = p3;
+			p3 = aux;
+		fimSe
+	senao
+		se(p3<p1 e p3<p2)entao
+			aux = p3;
+			p3 = p1;
+			p1 = aux;
+			se(p2>p3)entao
+				aux = p2;
+				p2 = p3;
+				p3 = aux;
+			fimSe
+		senao
+			se(p2>p3)entao
+				aux = p2;
+				p2 = p3;
+				p3 = aux;
+			fimSe
+		fimSe
+	fimSe
+    
+fimProcedimento
+

@@ -1,0 +1,72 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo: Calcular media das notas do alunos. 
+//  Entrada : Nota 1 e 2 dos alunos.
+//  Saída   : Mostra media aritmedica e duas medias ponderadas diferentes doas notas do aluno.
+
+
+principal
+	// Declarações
+
+	real nota1, nota2;
+	inteiro i;
+    caracter continuar;
+
+	// Instruções
+
+	i=0;
+
+	faca
+	   
+	    escreval("Insira informaçoes para calcular media do aluno: ");
+	    escreva("Escreva primeira nota do ",i+1,"º aluno: ");
+        leia(nota1);
+        escreva("Escreva segunda nota do ",i+1,"º aluno: ");
+        leia(nota2);
+        
+        escreval("");
+        escreval("================================================================================");
+        escreval("O resultado da media aritmedica do ",i+1,"º aluno é: ", media_aritm (nota1, nota2));
+        escreval("O resultado da primeira media ponderada do ",i+1,"º aluno é: ", media_ponde1 (nota1, nota2));
+	    escreval("O resultado da segunda media ponderada do ",i+1,"º aluno é: ", media_ponde2 (nota1, nota2));
+	    escreval("================================================================================");
+	    escreval("");
+
+	    i = i + 1;
+
+		se(i < 20)entao
+		    escreval("Pressione 's' para inserir novas notas: ");
+		    leiaCaracter(continuar);
+		    continuar = maiusculoCaracter(continuar);
+		    escreval("==========================================================");
+		fimSe
+	enquanto(i<=20 e continuar=='S');
+
+fimPrincipal
+
+funcao real media_aritm(real n1, real n2)
+
+    real media_arit;
+    
+    media_arit = (n1+n2) / 3;
+    
+    retorna media_arit;
+fimFuncao
+
+funcao real media_ponde1(real n1, real n2)
+
+    real media_pond1;
+    
+    media_pond1 = (n1*4+n2*6) / 10;
+    
+    retorna media_pond1;
+fimFuncao
+
+funcao real media_ponde2(real n1, real n2)
+
+    real media_pond2;
+    
+    media_pond2 = (n1*3+n2*7) / 10;
+    
+    retorna media_pond2;
+fimFuncao
